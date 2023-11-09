@@ -10,8 +10,8 @@ function setupVSCode(){
     window.location.href="../tutorials/setupVSCode.html";
 }
 
-function basicSetup(){
-    window.location.href="../tutorials/basicSetup.html";
+function library(){
+    window.location.href="../tutorials/library.html";
 }
 
 function pid(){
@@ -22,16 +22,16 @@ function dataLogging(){
     window.location.href="../tutorials/dataLogging.html";
 }
 
-function testingRobot(){
-    window.location.href="../tutorials/testingRobot.html";
+function chassis(){
+    window.location.href="../tutorials/chassis.html";
 }
 
-function ramp(){
-    window.location.href="../tutorials/ramp.html";
+function utilities(){
+    window.location.href="../tutorials/utilities.html";
 }
 
-function engage(){
-    window.location.href="../tutorials/engage.html";
+function async(){
+    window.location.href="../tutorials/async.html";
 }
 
 function encoders(){
