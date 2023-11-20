@@ -7,5 +7,18 @@ body,h1,h2,h3,h4,h5,h6,p {
 }
 
 header {
-    background-color:#0789d4;
+    background-color:#212529;
+    color:#FFFFFF;
+}
+
+header p {
+    color:#CCCCCC;
+}
+
+.oddRow {
+    background-color: #E6F0FF;
+}
+
+.evenRow{
+    background-color: #E1ECFF;
 }

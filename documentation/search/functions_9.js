@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['reset_0',['reset',['../class_p_i_d.html#a73cdd43d93f2cfcf19b62f7e5022bb90',1,'PID']]],
-  ['resetencoders_1',['resetencoders',['../class_chassis.html#a5d1a858ae051f95921eace356fac133f',1,'Chassis::resetEncoders()'],['../class_h_drive.html#a448d6d06b269ee2d992a93fd26fcf9cf',1,'HDrive::resetEncoders()'],['../classwpid_1_1_tank.html#ab26ed49d6b37976c307578d9d7f19a10',1,'wpid::Tank::resetEncoders()']]],
-  ['resetposition_2',['resetPosition',['../class_mechanism.html#adc106912a7a110db6047212b445e9c80',1,'Mechanism']]],
-  ['rightencoder_3',['rightencoder',['../class_h_drive.html#a66440dfd910d66d335721c0a2dbb02e8',1,'HDrive::rightEncoder()'],['../classwpid_1_1_tank.html#aadb12a63c5180bf1976ce23cef4c3881',1,'wpid::Tank::rightEncoder()']]]
+  ['tank_0',['tank',['../classwpid_1_1_tank.html#abb37d863583a9fe3745a880333b4cd9d',1,'wpid::Tank::Tank(float track_width, float wheel_radius, motor_group *left, motor_group *right, float drive_gear_ratio)'],['../classwpid_1_1_tank.html#adc1df376cae240432a54f33a9f4e4da6',1,'wpid::Tank::Tank()=default']]],
+  ['turn_1',['turn',['../classwpid_1_1_chassis.html#a37dd380a4ca4a932e40e3b80425232e1',1,'wpid::Chassis::turn()'],['../classwpid_1_1_h_drive.html#ab222585938b9ca0b797be2013a83b919',1,'wpid::HDrive::turn()'],['../classwpid_1_1_tank.html#aac6b61955ba3f1f6680b7f17ed1055cb',1,'wpid::Tank::turn()']]],
+  ['turnasync_2',['turnasync',['../classwpid_1_1_chassis.html#a8f075d50f6d62789c6983d544042d989',1,'wpid::Chassis::turnAsync()'],['../classwpid_1_1_h_drive.html#ace4eb4dfb5ca2dd5256b281141a89571',1,'wpid::HDrive::turnAsync()'],['../classwpid_1_1_tank.html#a62527777660eaf788fda29018d9c3fb5',1,'wpid::Tank::turnAsync()']]]
 ];

@@ -20,7 +20,6 @@ body,h1,h2,h3,h4,h5,h6,p {font-family: "Verdana", sans-serif}
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin-bottom: 0;
-    background-color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -40,4 +39,20 @@ body,h1,h2,h3,h4,h5,h6,p {font-family: "Verdana", sans-serif}
             
 .jumbotron .container {
     max-width: 40rem;
+}
+
+.header {
+    background-color:#212529;
+}
+
+.header p {
+    color:#CCCCCC;
+}
+
+.album{
+    background-color: #D7E6FF;
+}
+
+.card {
+    background-color: #E6F0FF;
 }
