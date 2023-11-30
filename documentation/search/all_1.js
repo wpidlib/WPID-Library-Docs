@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['calculatespeed_0',['calculateSpeed',['../class_p_i_d.html#a3bfacc11edb6718bbbef0ec6ec8eb11c',1,'PID']]],
+  ['calculatespeed_0',['calculateSpeed',['../classwpid_1_1_p_i_d.html#ac4f29aba611577617beb42a9f07a6046',1,'wpid::PID']]],
   ['chassis_1',['Chassis',['../classwpid_1_1_chassis.html',1,'wpid']]],
-  ['chassis_2eh_2',['Chassis.h',['../_chassis_8h.html',1,'']]],
-  ['cm_3',['cm',['../classconvert_1_1_conversion.html#a9dab82efc726eb6a623ec242432a439fa820eb5b696ea2a657c0db1e258dc7d81',1,'convert::Conversion']]],
-  ['conversion_4',['Conversion',['../classconvert_1_1_conversion.html',1,'convert']]],
-  ['conversion_2eh_5',['Conversion.h',['../_conversion_8h.html',1,'']]],
-  ['convert_6',['convert',['../namespaceconvert.html',1,'']]],
-  ['convertto_7',['convertto',['../classconvert_1_1_conversion.html#aef22b3278fd4e6645f478471d9f2edf9',1,'convert::Conversion::convertTo(float value, measurement output_type)'],['../classconvert_1_1_conversion.html#a5a3c97bc5e0f204fedb5a8910fef5ad3',1,'convert::Conversion::convertTo(float value, float gearset, vex::rotationUnits output_type)']]],
-  ['copy_8',['copy',['../class_p_i_d.html#a9edc848012cc97380d9657f79711513f',1,'PID']]]
+  ['cm_2',['cm',['../classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0da820eb5b696ea2a657c0db1e258dc7d81',1,'wpid::Conversion']]],
+  ['conversion_3',['Conversion',['../classwpid_1_1_conversion.html',1,'wpid']]],
+  ['convertto_4',['convertTo',['../classwpid_1_1_conversion.html#a44cf05c263893c2fde857aada3c5a459',1,'wpid::Conversion']]],
+  ['copy_5',['copy',['../classwpid_1_1_p_i_d.html#a21c7f8f5f52b1cc46d43da4fd1da2450',1,'wpid::PID']]]
 ];
