@@ -34,10 +34,6 @@ function async(){
     window.location.href="../tutorials/async.html";
 }
 
-function encoders(){
-    window.location.href="../tutorials/encoders.html";
-}
-
 function mechanism(){
     window.location.href="../tutorials/mechanism.html";
 }
