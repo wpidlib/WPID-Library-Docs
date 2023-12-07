@@ -7,34 +7,34 @@ $(function(){
 });
 
 function setupVSCode(){
-    window.location.href="../tutorials/setupVSCode.html";
+    window.location.href="../tutorials/Setup/setupVSCode.html";
 }
 
 function library(){
-    window.location.href="../tutorials/library.html";
+    window.location.href="../tutorials/Library/library.html";
 }
 
 function pid(){
-    window.location.href="../tutorials/pid.html";
+    window.location.href="../tutorials/PID/pid.html";
 }
 
 function dataLogging(){
-    window.location.href="../tutorials/dataLogging.html";
+    window.location.href="../tutorials/Logging/dataLogging.html";
 }
 
 function chassis(){
-    window.location.href="../tutorials/chassis.html";
+    window.location.href="../tutorials/Chassis/chassis.html";
 }
 
 function utilities(){
-    window.location.href="../tutorials/utilities.html";
+    window.location.href="../tutorials/Utilities/utilities.html";
 }
 
 function async(){
-    window.location.href="../tutorials/async.html";
+    window.location.href="../tutorials/Async/async.html";
 }
 
 function mechanism(){
-    window.location.href="../tutorials/mechanism.html";
+    window.location.href="../tutorials/Mechanism/mechanism.html";
 }
 
