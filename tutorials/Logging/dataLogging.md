@@ -1,63 +1,91 @@
 # Logging Data on the Brain and in the Terminal
 
-Implementing a library into your VEXCode project is quite easy and only requires a few basic steps. For a static library such as WPID, all you really need to do is add the header files into your project, add the library archive file and add the location of the archive file to your mkenv.mk file and you are up and running.
+Seeing what PID values are being used is critical for tuning the robot and getting the cleanest and fasted autonomous route possible. That is why logging these values either to the terminal, or to a file for graphing is important as it grants the ability to vizualize the change in these parameters over the course of a full run of the robot.
 
-> Note: if you attempt to import another library, make sure the archive file was compiled for the V5 brain, otherwise it will not work.
 
-Here is a step by step process for specifically importing WPID into your project.
+Here is a step by step process to log all the necessary parameters onto the computer terminal or VEX Brain.
 
-## Adding the WPID Library
-The first step is to add the necessary files to your project. Go to the [WPID library release page](https://github.com/AustinRebello/WPID-Library/releases/).
-![Alt text](image.png)
+## LOG() Terminal Logging
 
-Download the zip and take note of its location. Now navigate to your project directory. If you are in VSCode, right click the empty space in your project directory and click "Reveal in File Explorer" to open the project in your file explorer.
+Much of the logging in the terminal is done for you, with many LOG() calls, such as the one below, informing you of data or warning for errors.
 
-Open or extract the zip you just downloaded, and add the WPID folder to the include folder of your project. Then add the libwpid.a file to your project folder.
-Your project should look something like this:
-![Project files](image-1.png)
-
-You can see the WPID folder inside the include folder, and the libwpid.a file in your project directory.
-
-In the vex folder, open mkenv.mk and scroll down to line 105. Now just add "libwpid.a" to the line.
-
-```makefile
-# libraries
-LIBS = --start-group libwpid.a -lv5rt -lstdc++ -lc -lm -lgcc --end-group
+```c++
+LOG(INFO) << " err: " << error << " spd: " << speed << " P: " << error*kp << " I: " << integral*ki << " D: " << derivative*kd;
 ```
+> This LOG statement outputs the current PID, Error and Speed values for the VEX Robot.
 
-## Using the Library
-Now that you have added all the files you can start using the library. This involves including the header files that you need to use, or you could just include "wpid.h" in your files to access the entire library. This will be explained more in the other tutorials.
+### The Different Log Levels
 
-If you ever need a quick referenece to the library, you can look at the .h files to find all the function prototypes and classes. The .a archive file is essentially a minified version of the source code, and gets compiled alongside your program.
+There are three LOG() levels, WARN, INFO and DEBUG in that order. Selecting DEBUG will also include the INFO and WARN descriptions, while selecting INFO will also include the WARN descciptions.
+
+#### WARN
+The WARN log level indicates that something the program was not expecting has occured, such as a problem or a process that was disturbed in an unexpected way. The WARN log level does not mean that the program failed during runtime, an the code should still be running after a WARN was used.
+
+#### INFO
+This is considered the 'standard' log level indicating that an event occured, the application transferred to another state, etc. Information that is logged using the INFO log level should be one hundred percent informative and ignoring the info logs regularly should not result in important information getting missed.
+
+#### DEBUG
+The DEBUG level is used for information that may be needed during the troubleshooting process, diagnosing issues or running the library in a test mode to ensure the library is running correctly.
+
+
+### How to Use This in the Code
+
+To access and use the built in library terminal logger, please include the wpid.h file or the logger.h file to the file you wish to use the Logging function from.
+Once that is done, you can call the logging function using the format below:
+```c++
+LOG(LOGLEVEL) << data << optionalData << moreOptionalData
+```
+where LOGLEVEL is either WARN, INFO or DEBUG and any/all data.
+Not adding any data to be logged out will just result in the log level and timestamp being outputted.
+Adding multiple variables or strings to the data will result in all data being logged on one line as one string.
 
 ---
-## Creating your own Library
-> *For advanced users*
+## Logging to the Brain and Graphing the Results
+The P, I, D, Error and Speed values for ***EACH*** motor group are also automatically logged to a set of files if you have a microSD card inserted in the VEX Brain.
 
-If you ever wanted to create and share your own library, its just as easy. All you need to do is make sure you have all necessary .h and .cpp files associated with your project, compile an archive, and share the headers and archive files with whoever you want!
+> #### IMPORTANT NOTE: Since VEX does not contain the libraries necessary for deleting files, you will *HAVE* to delete files between each individual run, or they will accumulate an become ungraphable.
 
-### Compiling an Archive
-To compile, first make sure that any unnecessary files are deleted or moved outside of your project. This includes and extra .h files and .cpp files (especially main.cpp). It should only consist of the source code for your library, along with all of the respective header files.
+### How to Graph the Data
+You will first want to remove the microSD card from the VEX Brain and plug it into a computer.
+Once you navigate to the SD Card in File Explorer, you should see a list of files, with the number of files equaling the number of instructions per motor group.
+So if you have 2 motor groups and 3 driving instructions, but also 1 mechanism and 2 mechanism instructions, you will see 8 total files for that one run.
 
-You might also have to point to the source files in the makefile if you have many layers of folders in src.
-```makefile
-# inside "makefile"
-# location of the project source cpp and c files
-SRC_C  = $(wildcard src/*.cpp)
-SRC_C += $(wildcard src/*.c)
-SRC_C += $(wildcard src/*/*.cpp)
-SRC_C += $(wildcard src/*/*.c)
-SRC_C += $(wildcard src/*/*/*.cpp)
-SRC_C += $(wildcard src/*/*/*.c)
+![Files On SD Card](filesOnSDCard.png)
+
+You are then going to want to select all of these files and copy them to the file path WPID-Library/python_resources/VexLogs
+> Note: Make sure to store or remove any old files already existing in this file path. 
+
+![Files In Library 1](fileInLibrary1.png)
+![Files In Library 2](fileInLibrary2.png)
+
+Once you place the log files in the VexLogs folder, you are ready to run the python file!
+
+> Note: If the python file is throwing errors regarding not finding pandas, numpy, etc; you may need to install those packages. To install those packages, simply type "pip install (package name)" and it will pull the package down to your python installation. Listed below are all the packages that graphData.py uses:
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+import sys
 ```
-Editing this chunk of code in your makefile will give the compiler access to any nested source files inside folders. This wasn't necessary to do for the header files, but if you run into that issue I would advise doing something similar.
 
-Now you need to actually change the command that is run when you build the project. Further down the makefile file, change the build target to build an archive instead of a binary.
-```makefile
-# build targets
-all: $(BUILD)/$(PROJECTLIB).a
-# all: $(BUILD)/$(PROJECT).bin
-```
-As you can see from the image above, the build target is a .a file now. I advise keeping the other line just incase you want to build a binary for the robot instead of an archive file.
+To run the Python file, open a command line interface (command prompt) and navigate to the python_resources folder. Once there, just type "py graphData.py" to graph the files.
 
-Now when you hit the build button, instead of building a program for the brain, it builds an archive file located in your build folder. Use this archive file, along with the header files to share the library just as we did!
+![Execute Command](executeCommand.png)
+
+What this is going to do is compile all the files into a single data frame in python, then splitting the data in the data frame by motor group. For the following example, there will be a "LEFT" "CENTER" and "RIGHT" motor group. 
+
+The program will generate a new window for each motor group, with the next window can only be viewed after closing the first one. Here is an example of the "CENTER" motor group, used for HDrive, graphed out for a single instruction.
+
+![Graphed Data](centerGraph.png)
+
+Lastly, you can edit what parameters of PID you are viewing in the graph, as graphing all of them may cause one or more paramters to be hard to read. To accomplish this, you can include the parameters of PID you ***DO*** want to see as command line arguments, for example:
+
+![PI Data](piCommand.png)
+
+Will yield:
+
+![PI Data 2](piData.png)
+
+Not including any parameters is okay, the program will default to include all 3 paramters when none are specified.
