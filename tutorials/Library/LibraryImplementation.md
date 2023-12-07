@@ -8,12 +8,14 @@ Here is a step by step process for specifically importing WPID into your project
 
 ## Adding the WPID Library
 The first step is to add the necessary files to your project. Go to the [WPID library release page](https://github.com/AustinRebello/WPID-Library/releases/).
+
 ![Alt text](image.png)
 
 Download the zip and take note of its location. Now navigate to your project directory. If you are in VSCode, right click the empty space in your project directory and click "Reveal in File Explorer" to open the project in your file explorer.
 
 Open or extract the zip you just downloaded, and add the WPID folder to the include folder of your project. Then add the libwpid.a file to your project folder.
 Your project should look something like this:
+
 ![Project files](image-1.png)
 
 You can see the WPID folder inside the include folder, and the libwpid.a file in your project directory.
