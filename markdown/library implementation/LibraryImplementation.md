@@ -25,7 +25,10 @@ In the vex folder, open mkenv.mk and scroll down to line 105. Now just add "libw
 LIBS = --start-group libwpid.a -lv5rt -lstdc++ -lc -lm -lgcc --end-group
 ```
 
-Now you are all set! You can start using the library. If you ever need a quick referenece to the library, you can look at the .h files to find all the function prototypes and classes. The .a archive file is essentially a minified version of the source code, and gets compiled alongside your program. 
+## Using the Library
+Now that you have added all the files you can start using the library. This involves including the header files that you need to use, or you could just include "wpid.h" in your files to access the entire library. This will be explained more in the other tutorials.
+
+If you ever need a quick referenece to the library, you can look at the .h files to find all the function prototypes and classes. The .a archive file is essentially a minified version of the source code, and gets compiled alongside your program. 
 
 ---
 ## Creating your own Library 
