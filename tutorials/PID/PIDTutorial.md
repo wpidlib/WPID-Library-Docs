@@ -16,7 +16,7 @@ In closed-loop control, the algorithm takes input from the initial set of parame
 
 PID control is a type of closed-loop control system. In the VEX setting, the algorithm takes in a target distance parameter as its setpoint or goal state. The system output comes from a sensor on the robot that determines the robot’s current distance from its setpoint. This sensor can be an external camera, ultrasonic range finder, line tracker, or encoder (internal or external). In th WPID implementation, the chosen sensor for system output is the internal encoder system on the VEX V5 motors. The encoder sensor responds to motion and returns the distance that the motor has traveled. This traveled-distance is subtracted from the setpoint-distance to determine the steady-state error, referred to as error in the figure below. Then, the P, I, and D constants combine with the steady-state error to calculate the speed of the robot and the loop repeats with the new encoder output.
 
-![Figure of PID closed-loop Control](https://en.wikipedia.org/wiki/File:PID-feedback-loop-v1.png)
+![PIDFigure1.png](https://en.wikipedia.org/wiki/File:PID-feedback-loop-v1.png)
 > Figure of PID closed-loop control
 
 ---
