@@ -19,13 +19,14 @@ PID control is a type of closed-loop control system. In the VEX setting, the alg
 ![Figure of PID closed-loop Control](https://en.wikipedia.org/wiki/File:PID-feedback-loop-v1.png)
 > Figure of PID closed-loop control
 
+---
 # How Do P, I, and D Constants Work?
 
 The PID controller operates using a combination of three constants: the proportional constant Kp, the integral constant Ki, and the derivative constant Kd. 
 
 The Kp constant proportionally increases the robot’s response-speed based on steady-state error. With a higher steady-state error, the Kp constant will yield a more immediate response, however; a high Kp can cause overshoot, where the robot hits its setpoint and then continues moving.
 
-```
+```cpp
 float error;
 //error*kp;
 ```
@@ -33,7 +34,7 @@ float error;
 
 The Ki constant multiplies with the summation of steady-state error to move the robot incrementally towards its setpoint. Ki adds more precision to the system, so that once Kp brings the robot close to its setpoint, the Ki integration can cover the remaining distance. The combination of Kp and Ki is used in the PI control configuration of PID to quickly (Kp) and precisely (Ki) reach a setpoint.
 
-```
+```cpp
 float integral = prev_integral + (error * (delay_time/(float)1000));
 //integral*ki;
 ```
@@ -41,7 +42,7 @@ float integral = prev_integral + (error * (delay_time/(float)1000));
 
 The Kd constant multiplies with the difference of steady-state error to decrease overshoot. The combination of Kp and Kd is used in the PD control configuration of PID to quickly (Kp) reach a setpoint while curbing overshoot (Kd). 
 
-```
+```cpp
 float derivative = (error - prev_error) / (delay_time/(float)1000);
 //derivative*kd;
 ```
@@ -49,18 +50,19 @@ float derivative = (error - prev_error) / (delay_time/(float)1000);
 
 Using all three constants in conjunction implements the PID configuration, where the robot can quickly (Kp) and precisely (Ki) reach a setpoint while curbing overshoot (Kd). The Ki and Kd constants are not used together in a configuration, as the immediate response of Kp is crucial for an efficient implementation.
 
-```
+```cpp
 float speed = error*kp + integral*ki + derivative*kd;
 ```
 > PID control implementation in PID.cpp
 
+---
 # Why Does PID Need Additional Utilities?
 
 While PID serves as an adaptable and efficient algorithm for robotic motion, the algorithm has several blindspots that can be addressed with supplemental utilities. The first implementation issue with PID occurs at the intersection of the Kp and Ki constants. When continuously integrating with Ki throughout a PID-controlled motion, the integral portion of the algorithm increases to the point where overshoot is difficult to avoid. In order to eliminate overshoot from PID motions, this continuous accumulation of steady-state error needs to be limited to specific periods of the motion.
 
 The integral clamping and max-integral limit features within the WPID library address... 
 
-```
+```cpp
 float integral = prev_integral + (error * (delay_time/(float)1000));
 if(integral*ki > max_integral_speed) {integral = max_integral_speed/ki;}
 if(integral*ki < -max_integral_speed) {integral = (-max_integral_speed)/ki;}
@@ -78,12 +80,25 @@ Another issue with PID is the lack of a filtration feature for derivative noise.
 
 The low-pass derivative filtration feature within the WPI library addresses...
 
-```
+```cpp
 float a = .7;
 if(prev_error == MAXFLOAT) {prev_error = error;}
 float current_estimate = (previous_estimate*a + (1-a)*(error - prev_error)); 
 previous_estimate = current_estimate;
-prev_error = error; // set previous error to current error
+prev_error = error;
 float derivative = current_estimate / (delay_time/(float)1000);
 ```
 > Derivative filtration in PID.cpp
+
+---
+# How to Use the PID Class in a WPID Project
+
+Setting up the PID control for a VEX project using the WPID library involves two steps. First, you have to call the PID constructor and initialize the Kp, Ki, and Kd values. Below is some sample code showing the creation of a PID object.
+
+```cpp
+//PID(float kp, float ki, float kd)
+PID turnPID = new PID(0.7, 0.01, 0.5);
+```
+> PID constructor call example in init.cpp
+
+Next you need to call the applicable setters to initialize values used in the additional PID features. 
