@@ -89,3 +89,5 @@ Will yield:
 ![PI Data 2](piData.png)
 
 Not including any parameters is okay, the program will default to include all 3 paramters when none are specified.
+
+> ### REMINDER: PLEASE REMEMBER TO WIPE ALL FILES FROM THE SD CARD AFTER EVERY SINGLE VEX ROBOT RUN AND REPLACE OLD FILES IN VEXLOGS FOLDER
