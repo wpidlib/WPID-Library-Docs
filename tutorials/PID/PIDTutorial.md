@@ -105,7 +105,6 @@ Next you need to call the applicable setters to initialize values used in the ad
 
 ```cpp
 void setErrorRange(int degrees);
-void setDelayTime(int delay);
 void setTimeout(int timeout);
 void setLowSpeedThreshold(int threshold);
 void setMaxIntegral(int max_integral);
@@ -118,13 +117,6 @@ The error range value determines the number of V5 motor degrees +/- away from th
 liftPID.setErrorRange(5);
 ```
 > Error range setter call
-
-The delay time value determines the amount of time that the system waits before taking each new PID calculation. In an example case, the liftPID delay time is initialized to 25ms. If the motor needs to travel 180 degrees, the state of the robot will be updated every 20ms. The default delay time value is 25ms.
-
-```cpp
-liftPID.setDelayTime(25);
-```
-> Delay time setter call
 
 The timeout value determines the amount of time that passes before the system stops running PID. In an example case, the liftPID timeout is set to 3000ms. If the motor needs to travel 180 degrees but has taken longer than 3 seconds to run, the PID will stop running regardless of the error or speed at the 3 second mark. The default timeout value is -1; timeouts will be automatically disabled unless manually set.
 
