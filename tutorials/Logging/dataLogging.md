@@ -1,6 +1,6 @@
 # Logging Data on the Brain and in the Terminal
 
-Seeing what PID values are being used is critical for tuning the robot and getting the cleanest and fasted autonomous route possible. That is why logging these values either to the terminal, or to a file for graphing is important as it grants the ability to vizualize the change in these parameters over the course of a full run of the robot.
+Seeing what PID values are being used is critical for tuning the robot and getting the cleanest and fasted autonomous route possible. That is why logging these values either to the terminal, or to a file for graphing is important as it grants the ability to visualize the change in these parameters over the course of a full run of the robot.
 
 
 Here is a step by step process to log all the necessary parameters onto the computer terminal or VEX Brain.
@@ -16,13 +16,13 @@ LOG(INFO) << " err: " << error << " spd: " << speed << " P: " << error*kp << " I
 
 ### The Different Log Levels
 
-There are three LOG() levels, WARN, INFO and DEBUG in that order. Selecting DEBUG will also include the INFO and WARN descriptions, while selecting INFO will also include the WARN descciptions.
+There are three LOG() levels, WARN, INFO and DEBUG in that order. Selecting DEBUG will also include the INFO and WARN descriptions, while selecting INFO will also include the WARN descriptions.
 
 #### WARN
-The WARN log level indicates that something the program was not expecting has occured, such as a problem or a process that was disturbed in an unexpected way. The WARN log level does not mean that the program failed during runtime, an the code should still be running after a WARN was used.
+The WARN log level indicates that something the program was not expecting has occurred, such as a problem or a process that was disturbed in an unexpected way. The WARN log level does not mean that the program failed during runtime, an the code should still be running after a WARN was used.
 
 #### INFO
-This is considered the 'standard' log level indicating that an event occured, the application transferred to another state, etc. Information that is logged using the INFO log level should be one hundred percent informative and ignoring the info logs regularly should not result in important information getting missed.
+This is considered the 'standard' log level indicating that an event occurred, the application transferred to another state, etc. Information that is logged using the INFO log level should be one hundred percent informative and ignoring the info logs regularly should not result in important information getting missed.
 
 #### DEBUG
 The DEBUG level is used for information that may be needed during the troubleshooting process, diagnosing issues or running the library in a test mode to ensure the library is running correctly.
@@ -43,7 +43,7 @@ Adding multiple variables or strings to the data will result in all data being l
 ## Logging to the Brain and Graphing the Results
 The P, I, D, Error and Speed values for ***EACH*** motor group are also automatically logged to a set of files if you have a microSD card inserted in the VEX Brain.
 
-> #### IMPORTANT NOTE: Since VEX does not contain the libraries necessary for deleting files, you will *HAVE* to delete files between each individual run, or they will accumulate an become ungraphable.
+> #### IMPORTANT NOTE: Since VEX does not contain the libraries necessary for deleting files, you will *HAVE* to delete files between each individual run, or they will accumulate and no longer be graphable.
 
 ### How to Graph the Data
 You will first want to remove the microSD card from the VEX Brain and plug it into a computer.
@@ -80,7 +80,7 @@ The program will generate a new window for each motor group, with the next windo
 
 ![Graphed Data](centerGraph.png)
 
-Lastly, you can edit what parameters of PID you are viewing in the graph, as graphing all of them may cause one or more paramters to be hard to read. To accomplish this, you can include the parameters of PID you ***DO*** want to see as command line arguments, for example:
+Lastly, you can edit what parameters of PID you are viewing in the graph, as graphing all of them may cause one or more parameters to be hard to read. To accomplish this, you can include the parameters of PID you ***DO*** want to see as command line arguments, for example:
 
 ![PI Data](piCommand.png)
 
@@ -88,6 +88,6 @@ Will yield:
 
 ![PI Data 2](piData.png)
 
-Not including any parameters is okay, the program will default to include all 3 paramters when none are specified.
+Not including any parameters is okay, the program will default to include all 3 parameters when none are specified.
 
 > ### REMINDER: PLEASE REMEMBER TO WIPE ALL FILES FROM THE SD CARD AFTER EVERY SINGLE VEX ROBOT RUN AND REPLACE OLD FILES IN VEXLOGS FOLDER

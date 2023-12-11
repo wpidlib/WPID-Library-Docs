@@ -14,7 +14,7 @@ In closed-loop control, the algorithm takes input from the initial set of parame
 
 # PID VEX Applications
 
-PID control is a type of closed-loop control system. In the VEX setting, the algorithm takes in a target distance parameter as its setpoint or goal state. The system output comes from a sensor on the robot that determines the robot’s current distance from its setpoint. This sensor can be an external camera, ultrasonic range finder, line tracker, or encoder (internal or external). In th WPID implementation, the chosen sensor for system output is the internal encoder system on the VEX V5 motors. The encoder sensor responds to motion and returns the distance that the motor has traveled. This traveled-distance is subtracted from the setpoint-distance to determine the steady-state error, referred to as error in the figure below. Then, the P, I, and D constants combine with the steady-state error to calculate the speed of the robot and the loop repeats with the new encoder output.
+PID control is a type of closed-loop control system. In the VEX setting, the algorithm takes in a target distance parameter as its set-point or goal state. The system output comes from a sensor on the robot that determines the robot’s current distance from its set-point. This sensor can be an external camera, ultrasonic range finder, line tracker, or encoder (internal or external). In th WPID implementation, the chosen sensor for system output is the internal encoder system on the VEX V5 motors. The encoder sensor responds to motion and returns the distance that the motor has traveled. This traveled-distance is subtracted from the set-point-distance to determine the steady-state error, referred to as error in the figure below. Then, the P, I, and D constants combine with the steady-state error to calculate the speed of the robot and the loop repeats with the new encoder output.
 
 ![PID Control Diagram](PIDFigure1.png)
 > Figure of PID closed-loop control
@@ -24,7 +24,7 @@ PID control is a type of closed-loop control system. In the VEX setting, the alg
 
 The PID controller operates using a combination of three constants: the proportional constant Kp, the integral constant Ki, and the derivative constant Kd. 
 
-The Kp constant proportionally increases the robot’s response-speed based on steady-state error. With a higher steady-state error, the Kp constant will yield a more immediate response, however; a high Kp can cause overshoot, where the robot hits its setpoint and then continues moving.
+The Kp constant proportionally increases the robot’s response-speed based on steady-state error. With a higher steady-state error, the Kp constant will yield a more immediate response, however; a high Kp can cause overshoot, where the robot hits its set-point and then continues moving.
 
 ```cpp
 float error;
@@ -32,7 +32,7 @@ float error;
 ```
 > Proportional element of PID control
 
-The Ki constant multiplies with the summation of steady-state error to move the robot incrementally towards its setpoint. Ki adds more precision to the system, so that once Kp brings the robot close to its setpoint, the Ki integration can cover the remaining distance. The combination of Kp and Ki is used in the PI control configuration of PID to quickly (Kp) and precisely (Ki) reach a setpoint.
+The Ki constant multiplies with the summation of steady-state error to move the robot incrementally towards its set-point. Ki adds more precision to the system, so that once Kp brings the robot close to its set-point, the Ki integration can cover the remaining distance. The combination of Kp and Ki is used in the PI control configuration of PID to quickly (Kp) and precisely (Ki) reach a set-point.
 
 ```cpp
 float integral = prev_integral + (error * (delay_time/(float)1000));
@@ -40,7 +40,7 @@ float integral = prev_integral + (error * (delay_time/(float)1000));
 ```
 > Integral element of PID control
 
-The Kd constant multiplies with the difference of steady-state error to decrease overshoot. The combination of Kp and Kd is used in the PD control configuration of PID to quickly (Kp) reach a setpoint while curbing overshoot (Kd). 
+The Kd constant multiplies with the difference of steady-state error to decrease overshoot. The combination of Kp and Kd is used in the PD control configuration of PID to quickly (Kp) reach a set-point while curbing overshoot (Kd). 
 
 ```cpp
 float derivative = (error - prev_error) / (delay_time/(float)1000);
@@ -48,7 +48,7 @@ float derivative = (error - prev_error) / (delay_time/(float)1000);
 ```
 > Derivative element of PID control
 
-Using all three constants in conjunction implements the PID configuration, where the robot can quickly (Kp) and precisely (Ki) reach a setpoint while curbing overshoot (Kd). The Ki and Kd constants are not used together in a configuration, as the immediate response of Kp is crucial for an efficient implementation.
+Using all three constants in conjunction implements the PID configuration, where the robot can quickly (Kp) and precisely (Ki) reach a set-point while curbing overshoot (Kd). The Ki and Kd constants are not used together in a configuration, as the immediate response of Kp is crucial for an efficient implementation.
 
 ```cpp
 float speed = error*kp + integral*ki + derivative*kd;
@@ -58,7 +58,7 @@ float speed = error*kp + integral*ki + derivative*kd;
 ---
 # Why Does PID Need Additional Utilities?
 
-While PID serves as an adaptable and efficient algorithm for robotic motion, the algorithm has several blindspots that can be addressed with supplemental utilities. The first implementation issue with PID occurs at the intersection of the Kp and Ki constants. When continuously integrating with Ki throughout a PID-controlled motion, the integral portion of the algorithm increases to the point where overshoot is difficult to avoid. In order to eliminate overshoot from PID motions, this continuous accumulation of steady-state error needs to be limited to specific periods of the motion.
+While PID serves as an adaptable and efficient algorithm for robotic motion, the algorithm has several blind spots that can be addressed with supplemental utilities. The first implementation issue with PID occurs at the intersection of the Kp and Ki constants. When continuously integrating with Ki throughout a PID-controlled motion, the integral portion of the algorithm increases to the point where overshoot is difficult to avoid. In order to eliminate overshoot from PID motions, this continuous accumulation of steady-state error needs to be limited to specific periods of the motion.
 
 The integral clamping and max-integral limit features within the WPID library address... 
 

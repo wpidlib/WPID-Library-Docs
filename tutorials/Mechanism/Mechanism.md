@@ -38,7 +38,7 @@ The reason for adding all the motors to a motor_group is because we treat the mo
 
 ### Initializing the Mechanism Object
 
-Now we can initalize the Mechanism using the liftGroup and the external gear ratio. Here is the constructor:
+Now we can initialize the Mechanism using the liftGroup and the external gear ratio. Here is the constructor:
 
 - `Mechanism(vex::motor_group motors, float gear_ratio)`
 
@@ -61,7 +61,7 @@ PID liftPID = PID(1.0, 0.15, 0.02);
 fourbar.setPID(liftPID);
 ```
 
-This can go inside an initialize function as the PID object does not need to be globally accessable.
+This can go inside an initialize function as the PID object does not need to be globally accessible.
 
 > Check out our [PID tutorial](https://wpidlib.github.io/WPID-Library-Docs/tutorials/PID/pid.html) for more information about the PID class and it's attributes
 
@@ -90,7 +90,7 @@ And 3 options for asynchronous movement:
 - `waitUntilSettled()`
 
 In this tutorial we are only going to touch on non asynchronous functions.
-> Check out our [Async tutorial](https://wpidlib.github.io/WPID-Library-Docs/tutorials/Async/async.html) for more information about using the asyncrhonous functions.
+> Check out our [Async tutorial](https://wpidlib.github.io/WPID-Library-Docs/tutorials/Async/async.html) for more information about using the asynchronous functions.
 
 ### Using the Movement Functions
 
@@ -122,7 +122,7 @@ The `moveAbsolute()` function moves the Mechanism to an absolute position. This 
 
 ## Tweaking the Behavior of a Mechanism
 
-We can also change a few things about the fourbar, such as bounds and brake types. These tweaks are helpful to use when you want to improve the consistency and behavior of your Mechanism. Here are all the avaliable setters to tweak the Mechanism.
+We can also change a few things about the fourbar, such as bounds and brake types. These tweaks are helpful to use when you want to improve the consistency and behavior of your Mechanism. Here are all the available setters to tweak the Mechanism.
 
 ### The Setters
 
@@ -163,7 +163,7 @@ Using `setOffset()` allows us to bump up or down the targets of every movement i
 
 ## Other Useful Functions
 
-There are two other functions avaliable, which include:
+There are two other functions available, which include:
 
 - `float getPosition(vex::rotationUnits units)`
 - `void resetPosition()`
@@ -178,7 +178,7 @@ The `getPosition()` function gets the current position of the Mechanism in the u
 fourbar.resetPosition();
 ```
 
-The `resetPosition()` function resets the current position of the Mechanism to 0, so wherever the Mechanism currently lies, that position will now become the 0 position. This is especially useful if your Mechanism uses a hardstop, and combining a physical stopping point along with resetting the position in your program can improve consistency.
+The `resetPosition()` function resets the current position of the Mechanism to 0, so wherever the Mechanism currently lies, that position will now become the 0 position. This is especially useful if your Mechanism uses a hard stop, and combining a physical stopping point along with resetting the position in your program can improve consistency.
 
 ## Example
 

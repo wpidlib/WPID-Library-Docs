@@ -30,7 +30,7 @@ LIBS = --start-group libwpid.a -lv5rt -lstdc++ -lc -lm -lgcc --end-group
 ## Using the Library
 Now that you have added all the files you can start using the library. This involves including the header files that you need to use, or you could just include "wpid.h" in your files to access the entire library. This will be explained more in the other tutorials.
 
-If you ever need a quick referenece to the library, you can look at the .h files to find all the function prototypes and classes. The .a archive file is essentially a minified version of the source code, and gets compiled alongside your program.
+If you ever need a quick reference to the library, you can look at the .h files to find all the function prototypes and classes. The .a archive file is essentially a minified version of the source code, and gets compiled alongside your program.
 
 ---
 ## Creating your own Library
