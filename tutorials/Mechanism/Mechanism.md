@@ -40,15 +40,17 @@ The reason for adding all the motors to a motor_group is because we treat the mo
 
 Now we can initalize the Mechanism using the liftGroup and the external gear ratio. Here is the constructor:
 
-- `Mechanism(vex::motor_group* motors, float gear_ratio)`
+- `Mechanism(vex::motor_group motors, float gear_ratio)`
 
 Now let's use the constructor to create the fourbar Mechanism.
 
 ```cpp
-Mechanism* fourbar = new Mechanism(&liftGroup, 2);
+Mechanism fourbar = Mechanism(liftGroup, 2);
 ```
 
 We made a new Mechanism called `fourbar`, with the motors in the motor group, and also gave it the external gear ratio of the lift.
+
+> Note: make sure you add the constructor outside of any function if you want it to be global
 
 ### Setting a PID Object to the Mechanism
 
@@ -56,8 +58,10 @@ Now its time to set a PID object to the Mechanism so that we can use PID to move
 
 ```cpp
 PID liftPID = PID(1.0, 0.15, 0.02);
-fourbar->setPID(liftPID);
+fourbar.setPID(liftPID);
 ```
+
+This can go inside an initialize function as the PID object does not need to be globally accessable.
 
 > Check out our [PID tutorial](https://wpidlib.github.io/WPID-Library-Docs/tutorials/PID/pid.html) for more information about the PID class and it's attributes
 
@@ -68,7 +72,7 @@ We now set a PID object with some constants to the fourbar and are ready to use 
 ## Moving the Mechanism
 
 Now that our Mechanism has been created, we can move it during our auton and driver control periods.
-> Make sure you understand c++ and how global variables work to use the Mechanism throughout your project.
+> Make sure you understand c++ and how global variables work to use the Mechanism throughout your project. There is an example of a project at the bottom of the tutorial to see how this was done.
 
 ### The Movement Functions
 
@@ -91,25 +95,25 @@ In this tutorial we are only going to touch on non asynchronous functions.
 ### Using the Movement Functions
 
 ```cpp
-fourbar->spin(50);
+fourbar.spin(50);
 ```
 
 The `spin()` function requires a velocity in `velocity::pct` units. This is useful for controlling the Mechanism in driver control, as it also restricts the Mechanism to a maximum and minimum position that you can set using the `setBounds()` function. Check out the next section for more information on setting bounds.
 
 ```cpp
-fourbar->stop();
+fourbar.stop();
 ```
 
 As expected, the `stop()` function stops the Mechanism using the default brakeType. You can also set the brakeType using `setBrakeType`, explained in the next section.
 
 ```cpp
-fourbar->moveRelative(60, 50);
+fourbar.moveRelative(60, 50);
 ```
 
 The `moveRelative()` function moves the Mechanism to a relative position. It checks the current position of the lift and adds the target passed in and moves the lift to that position. The second parameter is the maximum speed the motors are allowed to spin. This is in `velocity::pct` units (percent units). In this example, the fourbar is moving 60 degrees beyond its current position at 50% speed.
 
 ```cpp
-fourbar->moveAbsolute(45, 25);
+fourbar.moveAbsolute(45, 25);
 ```
 
 The `moveAbsolute()` function moves the Mechanism to an absolute position. This means the Mechanism will move to the target passed in regardless of how far it is from the target. The speed is also in `velocity::pct` units. In this example we move the fourbar to 45 degrees at 25% speed.
@@ -132,25 +136,25 @@ There are 4 different setters to tweak the behavior of a Mechanism:
 ### Using the Tweaks
 
 ```cpp
-fourbar->setBounds(0, 90);
+fourbar.setBounds(0, 90);
 ```
 
-The `setBounds()` function allows us to give the lift a range that we don't want it to exceed. For this example, we don't want the lift to go below 0 degrees, or above 90. The angle is the absolute position of the lift. If no bounds are set, then calling `spin()` will not stop the motors if they travel beyond a point. This is the default behavior. All "move" functions will not let the Mechanism move beyond any bounds set, so don't worry if your math does not add up. For example, calling `fourbar->moveAbsolute(200, 25)` will not move the fourbar to 200 degrees, but instead to 90 as that is the upper bound.
+The `setBounds()` function allows us to give the lift a range that we don't want it to exceed. For this example, we don't want the lift to go below 0 degrees, or above 90. The angle is the absolute position of the lift. If no bounds are set, then calling `spin()` will not stop the motors if they travel beyond a point. This is the default behavior. All "move" functions will not let the Mechanism move beyond any bounds set, so don't worry if your math does not add up. For example, calling `fourbar.moveAbsolute(200, 25)` will not move the fourbar to 200 degrees, but instead to 90 as that is the upper bound.
 
 ```cpp
-fourbar->setBrakeType(hold);
+fourbar.setBrakeType(hold);
 ```
 
 The `setBrakeType()` function allows us to give the Mechanism a `vex::brakeType` to use when the lift is being told to `stop()`. The default brake mode for all new Mechanisms is `coast`, but it is recommended to change to `brake` or `hold`.
 
 ```cpp
-fourbar->setMaxAcceleration(5);
+fourbar.setMaxAcceleration(5);
 ```
 
 The `setMaxAcceleration()` function passes a value in `velocityUnits::pct per PID iteration` units to the Mechanism to allow it to ramp up. The way it works is every time the PID loop iterates, it increases the speed of the motors by this value. It is important to set this to a speed that allows the motors to ramp up at a slow enough rate to reduce jerky motion, but also to get up to speed fast enough before PID starts to reduce it. You can also turn off acceleration by passing in -1. In this example, every iteration of the PID loop will cause the motors to increase their velocity by 5%. Changing the PID delay time will change how frequent this increase occurs.
 
 ```cpp
-fourbar->setOffset(2);
+fourbar.setOffset(2);
 ```
 
 Using `setOffset()` allows us to bump up or down the targets of every movement if there is a consistent amount of error that occurs regardless of your targets or speeds. For example, if the Mechanism is always 2 degrees off its target, you can pass in 2, and it will bump up every target by 2 degrees. Negative values also work if the Mechanism is overshooting its targets.
@@ -165,13 +169,13 @@ There are two other functions avaliable, which include:
 - `void resetPosition()`
 
 ```cpp
-float currentPosition = fourbar->getPosition(deg);
+float currentPosition = fourbar.getPosition(deg);
 ```
 
 The `getPosition()` function gets the current position of the Mechanism in the units passed in. This is useful for keeping track of the position of the Mechanism. The gear ratio of the Mechanism scales the output of this function accordingly. In this example, we set the output of the `getPosition()` function to a local variable called `currentPosition` that we can reference later.
 
 ```cpp
-fourbar->resetPosition();
+fourbar.resetPosition();
 ```
 
 The `resetPosition()` function resets the current position of the Mechanism to 0, so wherever the Mechanism currently lies, that position will now become the 0 position. This is especially useful if your Mechanism uses a hardstop, and combining a physical stopping point along with resetting the position in your program can improve consistency.
@@ -192,7 +196,7 @@ Here is the full example of how we can create a Mechanism in our initialization 
 using namespace vex;
 using namespace wpid;
 
-extern Mechanism* fourbar;
+extern Mechanism fourbar;
 
 #endif // INITIALIZE_H
 ```
@@ -210,19 +214,19 @@ motor liftD = motor(PORT4, ratio18_1, true);
 // the lift motor group
 motor_group liftGroup = motor_group(liftA, liftB, liftC, liftD);
 
-void initialize(){
-  // instantiate the fourbar Mechanism
-  fourbar = new Mechanism(liftGroup, 2);
+// instantiate the fourbar Mechanism
+Mechanism fourbar = Mechanism(liftGroup, 2);
 
+void initialize(){
   // tweak some attributes
-  fourbar->setBounds(0, 90);
-  fourbar->setMaxAcceleration(5);
-  fourbar->setBrakeType(hold);
-  fourbar->setOffset(2);
+  fourbar.setBounds(0, 90);
+  fourbar.setMaxAcceleration(5);
+  fourbar.setBrakeType(hold);
+  fourbar.setOffset(2);
 
   // add a PID object to the fourbar
   PID liftPID = PID(1.0, 0.15, 0.02);
-  fourbar->setPID(liftPID);
+  fourbar.setPID(liftPID);
 }
 ```
 
@@ -232,8 +236,8 @@ void initialize(){
 
 int main(){
   initialize(); // initialize the fourbar
-  fourbar->moveAbsolute(70, 75); // move the fourbar to 70 degrees at 75% speed
-  fourbar->moveRelative(20, 45); // move the fourbar to 90 degrees at 45% speed
-  fourbar->moveAbsolute(0, 100); // move the fourbar to 0  degrees at 100% speed
+  fourbar.moveAbsolute(70, 75); // move the fourbar to 70 degrees at 75% speed
+  fourbar.moveRelative(20, 45); // move the fourbar to 90 degrees at 45% speed
+  fourbar.moveAbsolute(0, 100); // move the fourbar to 0  degrees at 100% speed
 }
 ```
