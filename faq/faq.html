@@ -39,7 +39,8 @@
                 <div class="w3-content">
                   <div class="w3-twothird">
                     <h2>Help my robot is overshooting a lot, what can I do?</h2>
-                    <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+                    <h5 class="w3-padding-32">If your robot over shoots, then your integral term is too large, causing it to add up error to a really high value by the time it gets to the setpoint. You can either reduce the Ki value to slow down the integrator, or you can introduce a max integral value. Check the console to see how high the integral value gets to, and use that to find a reasonable maximum value for the integral.
+                    </h5>
                   </div>
               
                   <div class="w3-third w3-center">
