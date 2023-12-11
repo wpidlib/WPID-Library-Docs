@@ -30,7 +30,6 @@ var menudata={children:[
 {text:"Class Hierarchy",url:"hierarchy.html"},
 {text:"Class Members",url:"functions.html",children:[
 {text:"All",url:"functions.html",children:[
-{text:"b",url:"functions.html#index_b"},
 {text:"c",url:"functions.html#index_c"},
 {text:"d",url:"functions.html#index_d"},
 {text:"f",url:"functions.html#index_f"},

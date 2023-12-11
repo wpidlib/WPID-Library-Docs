@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>wpid</b></li><li class="navelem"><a class="el" href="classwpid_1_1_chassis.html">Chassis</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacewpid.html">wpid</a></li><li class="navelem"><a class="el" href="classwpid_1_1_chassis.html">Chassis</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,6 +80,11 @@ $(function() {
   <div class="headertitle"><div class="title">wpid::Chassis Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will defualt to the behavior defined here, which for all methods is to do nothing.  
+ <a href="classwpid_1_1_chassis.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_chassis_8h_source.html">Chassis.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for wpid::Chassis:</div>
 <div class="dyncontent">
@@ -94,22 +99,22 @@ Inheritance diagram for wpid::Chassis:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abca4eeb10c74b1fbf4752524c67ae20c" id="r_abca4eeb10c74b1fbf4752524c67ae20c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#abca4eeb10c74b1fbf4752524c67ae20c">setStraightPID</a> (<a class="el" href="classwpid_1_1_p_i_d.html">PID</a> pid)=0</td></tr>
-<tr class="memdesc:abca4eeb10c74b1fbf4752524c67ae20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the straight line <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object.  <br /></td></tr>
+<tr class="memdesc:abca4eeb10c74b1fbf4752524c67ae20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the straight <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object.  <br /></td></tr>
 <tr class="separator:abca4eeb10c74b1fbf4752524c67ae20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf40d341e4323bcda7c42decd46f40a4" id="r_acf40d341e4323bcda7c42decd46f40a4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#acf40d341e4323bcda7c42decd46f40a4">setTurnPID</a> (<a class="el" href="classwpid_1_1_p_i_d.html">PID</a> pid)=0</td></tr>
 <tr class="memdesc:acf40d341e4323bcda7c42decd46f40a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the turning <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object.  <br /></td></tr>
 <tr class="separator:acf40d341e4323bcda7c42decd46f40a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30ca30ccefa6a66ba110bf986d7913d2" id="r_a30ca30ccefa6a66ba110bf986d7913d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a30ca30ccefa6a66ba110bf986d7913d2">straight</a> (float distance, int max_speed)=0</td></tr>
-<tr class="memdesc:a30ca30ccefa6a66ba110bf986d7913d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:a30ca30ccefa6a66ba110bf986d7913d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:a30ca30ccefa6a66ba110bf986d7913d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ce33d0730f804bc846941fde801617" id="r_aa5ce33d0730f804bc846941fde801617"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#aa5ce33d0730f804bc846941fde801617">straightAsync</a> (float distance, int max_speed)=0</td></tr>
-<tr class="memdesc:aa5ce33d0730f804bc846941fde801617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:aa5ce33d0730f804bc846941fde801617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:aa5ce33d0730f804bc846941fde801617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37dd380a4ca4a932e40e3b80425232e1" id="r_a37dd380a4ca4a932e40e3b80425232e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a37dd380a4ca4a932e40e3b80425232e1">turn</a> (int target_angle, int max_speed)=0</td></tr>
-<tr class="memdesc:a37dd380a4ca4a932e40e3b80425232e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:a37dd380a4ca4a932e40e3b80425232e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:a37dd380a4ca4a932e40e3b80425232e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f075d50f6d62789c6983d544042d989" id="r_a8f075d50f6d62789c6983d544042d989"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a8f075d50f6d62789c6983d544042d989">turnAsync</a> (float target_angle, int max_speed)=0</td></tr>
-<tr class="memdesc:a8f075d50f6d62789c6983d544042d989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:a8f075d50f6d62789c6983d544042d989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:a8f075d50f6d62789c6983d544042d989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a495a5cd37f2e6e61ec2a8d5cab9483a7" id="r_a495a5cd37f2e6e61ec2a8d5cab9483a7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a495a5cd37f2e6e61ec2a8d5cab9483a7">stop</a> ()=0</td></tr>
 <tr class="memdesc:a495a5cd37f2e6e61ec2a8d5cab9483a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the chassis using the default brake mode.  <br /></td></tr>
@@ -129,21 +134,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a99f4635cc5b13bfcac962149bb515e2d" id="r_a99f4635cc5b13bfcac962149bb515e2d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a99f4635cc5b13bfcac962149bb515e2d">setBrakeType</a> (vex::brakeType type)=0</td></tr>
 <tr class="memdesc:a99f4635cc5b13bfcac962149bb515e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the brake type of the chassis.  <br /></td></tr>
 <tr class="separator:a99f4635cc5b13bfcac962149bb515e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd8cbd8b68e4936a7f37cffb816e8074" id="r_acd8cbd8b68e4936a7f37cffb816e8074"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#acd8cbd8b68e4936a7f37cffb816e8074">setMaxAcceleration</a> (float max_accel)=0</td></tr>
-<tr class="memdesc:acd8cbd8b68e4936a7f37cffb816e8074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the max acceleration of the chassis. The value is arbitrary, between 0 and 1.  <br /></td></tr>
-<tr class="separator:acd8cbd8b68e4936a7f37cffb816e8074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2f29c79071df33ea2df9fd9c0908085" id="r_ac2f29c79071df33ea2df9fd9c0908085"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#ac2f29c79071df33ea2df9fd9c0908085">setMeasurementUnits</a> (<a class="el" href="classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0d">Conversion::measurement</a> preferred_units)=0</td></tr>
 <tr class="memdesc:ac2f29c79071df33ea2df9fd9c0908085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the measurement units for chassis values.  <br /></td></tr>
 <tr class="separator:ac2f29c79071df33ea2df9fd9c0908085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a27efb1e5e7cdecfe8e9861e216353366" id="r_a27efb1e5e7cdecfe8e9861e216353366"><td class="memItemLeft" align="right" valign="top"><a id="a27efb1e5e7cdecfe8e9861e216353366" name="a27efb1e5e7cdecfe8e9861e216353366"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>track_width</b></td></tr>
-<tr class="memdesc:a27efb1e5e7cdecfe8e9861e216353366"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classwpid_1_1_chassis.html">Chassis</a> scales specific for <a class="el" href="classwpid_1_1_tank.html">Tank</a> Drive. <br /></td></tr>
+<tr class="memitem:a27efb1e5e7cdecfe8e9861e216353366" id="r_a27efb1e5e7cdecfe8e9861e216353366"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a27efb1e5e7cdecfe8e9861e216353366">track_width</a></td></tr>
 <tr class="separator:a27efb1e5e7cdecfe8e9861e216353366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d8515e6fe534eb95ca4871486e30eba" id="r_a2d8515e6fe534eb95ca4871486e30eba"><td class="memItemLeft" align="right" valign="top"><a id="a2d8515e6fe534eb95ca4871486e30eba" name="a2d8515e6fe534eb95ca4871486e30eba"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>wheel_circumference</b></td></tr>
+<tr class="memitem:a2d8515e6fe534eb95ca4871486e30eba" id="r_a2d8515e6fe534eb95ca4871486e30eba"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a2d8515e6fe534eb95ca4871486e30eba">wheel_circumference</a></td></tr>
 <tr class="separator:a2d8515e6fe534eb95ca4871486e30eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79e40cb0fa5ca995af737b1d8d0b670f" id="r_a79e40cb0fa5ca995af737b1d8d0b670f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classwpid_1_1_mechanism.html">Mechanism</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a79e40cb0fa5ca995af737b1d8d0b670f">left</a></td></tr>
 <tr class="separator:a79e40cb0fa5ca995af737b1d8d0b670f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,12 +159,12 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>wheel_circumference<
 <tr class="memitem:ad7341884bda68a191a8c93ae6c4f9385" id="r_ad7341884bda68a191a8c93ae6c4f9385"><td class="memItemLeft" align="right" valign="top"><a id="ad7341884bda68a191a8c93ae6c4f9385" name="ad7341884bda68a191a8c93ae6c4f9385"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0</td></tr>
 <tr class="separator:ad7341884bda68a191a8c93ae6c4f9385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4041e9b0a61b750af36ab5c9fb93edd5" id="r_a4041e9b0a61b750af36ab5c9fb93edd5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a4041e9b0a61b750af36ab5c9fb93edd5">max_acceleration</a> = .5</td></tr>
-<tr class="separator:a4041e9b0a61b750af36ab5c9fb93edd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ecc3dc057248bd34257344ac1d5d88" id="r_a48ecc3dc057248bd34257344ac1d5d88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0d">Conversion::measurement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a48ecc3dc057248bd34257344ac1d5d88">measure_units</a> = <a class="el" href="classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0da13b5bfe96f3e2fe411c9f66f4a582adf">Conversion::measurement::in</a></td></tr>
 <tr class="separator:a48ecc3dc057248bd34257344ac1d5d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will defualt to the behavior defined here, which for all methods is to do nothing. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a058ee412dc3ebb3bb5b584ec08fe57db" name="a058ee412dc3ebb3bb5b584ec08fe57db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a058ee412dc3ebb3bb5b584ec08fe57db">&#9670;&#160;</a></span>getLeftPosition()</h2>
 
@@ -306,42 +305,6 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 
 </div>
 </div>
-<a id="acd8cbd8b68e4936a7f37cffb816e8074" name="acd8cbd8b68e4936a7f37cffb816e8074"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd8cbd8b68e4936a7f37cffb816e8074">&#9670;&#160;</a></span>setMaxAcceleration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void wpid::Chassis::setMaxAcceleration </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>max_accel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the max acceleration of the chassis. The value is arbitrary, between 0 and 1. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">max_accel</td><td>an arbitrary value to increment to ramp the speed up </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#ab771f8c9a890079fd63e1e33d3474833">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a2b35a396f645f1a55c76e22aae789c4f">wpid::Tank</a>.</p>
-
-</div>
-</div>
 <a id="ac2f29c79071df33ea2df9fd9c0908085" name="ac2f29c79071df33ea2df9fd9c0908085"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2f29c79071df33ea2df9fd9c0908085">&#9670;&#160;</a></span>setMeasurementUnits()</h2>
 
@@ -402,7 +365,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Sets the straight line <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. </p>
+<p>Sets the straight <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pid</td><td>a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object holding the constants for driving straight </td></tr>
@@ -513,7 +476,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">distance</td><td>the distance in inches </td></tr>
@@ -560,7 +523,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">distance</td><td>the distance in inches </td></tr>
@@ -607,7 +570,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">target_angle</td><td>the target angle in degrees </td></tr>
@@ -654,7 +617,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">target_angle</td><td>the target angle in degrees </td></tr>
@@ -716,30 +679,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Left and Right motor groups for <a class="el" href="classwpid_1_1_tank.html">Tank</a> </p>
-
-</div>
-</div>
-<a id="a4041e9b0a61b750af36ab5c9fb93edd5" name="a4041e9b0a61b750af36ab5c9fb93edd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4041e9b0a61b750af36ab5c9fb93edd5">&#9670;&#160;</a></span>max_acceleration</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float wpid::Chassis::max_acceleration = .5</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Maximum acceleration for ramp </p>
+<p>Left and Right mechanisms </p>
 
 </div>
 </div>
@@ -762,7 +702,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Measurement unit </p>
+<p>The units used for distances </p>
 
 </div>
 </div>
@@ -785,7 +725,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Seperate <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> objects for turning and straight motion </p>
+<p><a class="el" href="classwpid_1_1_p_i_d.html">PID</a> objects for straight and turning motion </p>
 
 </div>
 </div>
@@ -808,12 +748,58 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Offsets to fix steady state error </p>
+<p>Offsets to fix consistent error </p>
+
+</div>
+</div>
+<a id="a27efb1e5e7cdecfe8e9861e216353366" name="a27efb1e5e7cdecfe8e9861e216353366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27efb1e5e7cdecfe8e9861e216353366">&#9670;&#160;</a></span>track_width</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float wpid::Chassis::track_width</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> track width for <a class="el" href="classwpid_1_1_tank.html">Tank</a> drive </p>
+
+</div>
+</div>
+<a id="a2d8515e6fe534eb95ca4871486e30eba" name="a2d8515e6fe534eb95ca4871486e30eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d8515e6fe534eb95ca4871486e30eba">&#9670;&#160;</a></span>wheel_circumference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float wpid::Chassis::wheel_circumference</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> wheel circumference </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/austi/Documents/WPID-Library/include/WPID/Chassis/<a class="el" href="_chassis_8h_source.html">Chassis.h</a></li>
+<li>C:/Users/austi/Documents/GitHub/WPID-Library/include/WPID/Chassis/<a class="el" href="_chassis_8h_source.html">Chassis.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

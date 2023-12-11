@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pidstraight_0',['pidStraight',['../classwpid_1_1_chassis.html#a749b8244ac88359f60ec57818b1094d8',1,'wpid::Chassis']]]
+  ['track_5fwidth_0',['track_width',['../classwpid_1_1_chassis.html#a27efb1e5e7cdecfe8e9861e216353366',1,'wpid::Chassis']]]
 ];

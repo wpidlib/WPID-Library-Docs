@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delay_5ftime_0',['delay_time',['../classwpid_1_1_p_i_d.html#ac1a2832542f4e38fe0495cb14e17be8b',1,'wpid::PID']]]
+  ['measure_5funits_0',['measure_units',['../classwpid_1_1_chassis.html#a48ecc3dc057248bd34257344ac1d5d88',1,'wpid::Chassis']]]
 ];

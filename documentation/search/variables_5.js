@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['straight_5foffset_0',['straight_offset',['../classwpid_1_1_chassis.html#affa45770447ee40553dd3fdb7aedde2d',1,'wpid::Chassis']]]
+  ['wheel_5fcircumference_0',['wheel_circumference',['../classwpid_1_1_chassis.html#a2d8515e6fe534eb95ca4871486e30eba',1,'wpid::Chassis']]]
 ];

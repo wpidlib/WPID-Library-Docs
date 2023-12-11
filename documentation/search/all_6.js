@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['in_0',['in',['../classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0da13b5bfe96f3e2fe411c9f66f4a582adf',1,'wpid::Conversion']]]
+  ['left_0',['left',['../classwpid_1_1_chassis.html#a79e40cb0fa5ca995af737b1d8d0b670f',1,'wpid::Chassis']]],
+  ['log_1',['LOG',['../classwpid_1_1_l_o_g.html',1,'wpid']]]
 ];
