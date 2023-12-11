@@ -97,17 +97,40 @@ Setting up the PID control for a VEX project using the WPID library involves two
 
 ```cpp
 //PID(float kp, float ki, float kd)
-PID turnPID = new PID(0.7, 0.01, 0.5);
+PID liftPID = new PID(0.7, 0.01, 0.5);
 ```
-> PID constructor call example in init.cpp
+> PID constructor call example
 
-Next you need to call the applicable setters to initialize values used in the additional PID features. 
+Next you need to call the applicable setters to initialize values used in the additional PID features. These setters initialize the error range, delay time between new PID calculations, elapsed time for system timeouts, settling (low) speed threshold, and the maximum speed the Ki constant can contribute to the final speed calculation.
 
 ```cpp
-void setErrorRange(float bound);
+void setErrorRange(int degrees);
 void setDelayTime(int delay);
-void setBias(int bias);
-void setLowSpeedThreshold(int threshold);
 void setTimeout(int timeout);
+void setLowSpeedThreshold(int threshold);
 void setMaxIntegral(int max_integral);
 ```
+> PID variable setters
+
+The error range value determines the number of V5 motor degrees +/- away from the target that are acceptable as the final error. In an example case, the liftPID error range is initialized to 5 degrees. If the motor needs to travel 180 degrees, the motor may end its motion after traveling anywhere in the range of {175-185} degrees. The final error after this motion will be anywhere between {-5-5} degrees. The error range default value is 2 degrees.
+
+```cpp
+liftPID.setErrorRange(5);
+```
+> Error range setter call
+
+The delay time value determines the amount of time that the system waits before taking each new PID calculation. In an example case, the liftPID delay time is initialized to 25ms. If the motor needs to travel 180 degrees, the state of the robot will be updated every 20ms. The default delay time value is 25ms.
+
+```cpp
+liftPID.setDelayTime(25);
+```
+> Delay time setter call
+
+The timeout value determines the amount of time that passes before the system stops running PID. In an example case, the liftPID timeout is set to 3000ms. If the motor needs to travel 180 degrees but has taken longer than 3 seconds to run, the PID will stop running regardless of the error or speed at the 3 second mark. The default timeout value is -1; timeouts will be automatically disabled unless manually set.
+
+```cpp
+liftPID.setTimeout(3000);
+```
+> Timeout setter call
+
+The low speed threshold value...
