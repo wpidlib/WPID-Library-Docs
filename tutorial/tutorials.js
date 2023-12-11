@@ -26,10 +26,6 @@ function chassis(){
     window.location.href="../tutorials/Chassis/chassis.html";
 }
 
-function utilities(){
-    window.location.href="../tutorials/Utilities/utilities.html";
-}
-
 function async(){
     window.location.href="../tutorials/Async/async.html";
 }
