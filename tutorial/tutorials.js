@@ -34,3 +34,7 @@ function mechanism(){
     window.location.href="../tutorials/Mechanism/mechanism.html";
 }
 
+function tuning(){
+    window.location.href="../tutorials/Tuning/tuning.html";
+}
+
