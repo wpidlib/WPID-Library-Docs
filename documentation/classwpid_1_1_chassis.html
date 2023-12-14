@@ -13,6 +13,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WPID Library<span id="projectnumber">&#160;4</span>
+   <div id="projectname">WPID Library<span id="projectnumber">&#160;5</span>
    </div>
   </td>
  </tr>
@@ -81,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will defualt to the behavior defined here, which for all methods is to do nothing.  
+<p>A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will default to the behavior defined here, which for all methods is to do nothing.  
  <a href="classwpid_1_1_chassis.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_chassis_8h_source.html">Chassis.h</a>&gt;</code></p>
@@ -91,30 +93,30 @@ Inheritance diagram for wpid::Chassis:</div>
  <div class="center">
   <img src="classwpid_1_1_chassis.png" usemap="#wpid::Chassis_map" alt=""/>
   <map id="wpid::Chassis_map" name="wpid::Chassis_map">
-<area href="classwpid_1_1_tank.html" alt="wpid::Tank" shape="rect" coords="0,56,88,80"/>
-<area href="classwpid_1_1_h_drive.html" alt="wpid::HDrive" shape="rect" coords="0,112,88,136"/>
+<area href="classwpid_1_1_tank.html" title="An Tank chassis class that inherits from the Chassis virtual class. Contains functions for moving for..." alt="wpid::Tank" shape="rect" coords="0,56,88,80"/>
+<area href="classwpid_1_1_h_drive.html" title="An HDrive chassis class that inherits from the Tank class. Contains functions for strafing sideways,..." alt="wpid::HDrive" shape="rect" coords="0,112,88,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abca4eeb10c74b1fbf4752524c67ae20c" id="r_abca4eeb10c74b1fbf4752524c67ae20c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#abca4eeb10c74b1fbf4752524c67ae20c">setStraightPID</a> (<a class="el" href="classwpid_1_1_p_i_d.html">PID</a> pid)=0</td></tr>
-<tr class="memdesc:abca4eeb10c74b1fbf4752524c67ae20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the straight <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object.  <br /></td></tr>
+<tr class="memdesc:abca4eeb10c74b1fbf4752524c67ae20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the straight <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object.  <br /></td></tr>
 <tr class="separator:abca4eeb10c74b1fbf4752524c67ae20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf40d341e4323bcda7c42decd46f40a4" id="r_acf40d341e4323bcda7c42decd46f40a4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#acf40d341e4323bcda7c42decd46f40a4">setTurnPID</a> (<a class="el" href="classwpid_1_1_p_i_d.html">PID</a> pid)=0</td></tr>
-<tr class="memdesc:acf40d341e4323bcda7c42decd46f40a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the turning <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object.  <br /></td></tr>
+<tr class="memdesc:acf40d341e4323bcda7c42decd46f40a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the turning <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object.  <br /></td></tr>
 <tr class="separator:acf40d341e4323bcda7c42decd46f40a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30ca30ccefa6a66ba110bf986d7913d2" id="r_a30ca30ccefa6a66ba110bf986d7913d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a30ca30ccefa6a66ba110bf986d7913d2">straight</a> (float distance, int max_speed)=0</td></tr>
-<tr class="memdesc:a30ca30ccefa6a66ba110bf986d7913d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:a30ca30ccefa6a66ba110bf986d7913d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:a30ca30ccefa6a66ba110bf986d7913d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ce33d0730f804bc846941fde801617" id="r_aa5ce33d0730f804bc846941fde801617"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#aa5ce33d0730f804bc846941fde801617">straightAsync</a> (float distance, int max_speed)=0</td></tr>
-<tr class="memdesc:aa5ce33d0730f804bc846941fde801617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:aa5ce33d0730f804bc846941fde801617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:aa5ce33d0730f804bc846941fde801617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37dd380a4ca4a932e40e3b80425232e1" id="r_a37dd380a4ca4a932e40e3b80425232e1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a37dd380a4ca4a932e40e3b80425232e1">turn</a> (int target_angle, int max_speed)=0</td></tr>
-<tr class="memdesc:a37dd380a4ca4a932e40e3b80425232e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:a37dd380a4ca4a932e40e3b80425232e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:a37dd380a4ca4a932e40e3b80425232e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f075d50f6d62789c6983d544042d989" id="r_a8f075d50f6d62789c6983d544042d989"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a8f075d50f6d62789c6983d544042d989">turnAsync</a> (float target_angle, int max_speed)=0</td></tr>
-<tr class="memdesc:a8f075d50f6d62789c6983d544042d989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
+<tr class="memdesc:a8f075d50f6d62789c6983d544042d989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed.  <br /></td></tr>
 <tr class="separator:a8f075d50f6d62789c6983d544042d989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a495a5cd37f2e6e61ec2a8d5cab9483a7" id="r_a495a5cd37f2e6e61ec2a8d5cab9483a7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html#a495a5cd37f2e6e61ec2a8d5cab9483a7">stop</a> ()=0</td></tr>
 <tr class="memdesc:a495a5cd37f2e6e61ec2a8d5cab9483a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the chassis using the default brake mode.  <br /></td></tr>
@@ -163,7 +165,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 <tr class="separator:a48ecc3dc057248bd34257344ac1d5d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will defualt to the behavior defined here, which for all methods is to do nothing. </p>
+<div class="textblock"><p>A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will default to the behavior defined here, which for all methods is to do nothing. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a058ee412dc3ebb3bb5b584ec08fe57db" name="a058ee412dc3ebb3bb5b584ec08fe57db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a058ee412dc3ebb3bb5b584ec08fe57db">&#9670;&#160;</a></span>getLeftPosition()</h2>
@@ -198,7 +200,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the position in the specified units </dd></dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a1d475e73b7401f468696134950736ed9">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a0b91fd3de9d5072d12b47235057c699b">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a4f495326f212b0f53c9ddc3445ba1ed0">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a1ce091cedb3482ad6cb683bf2890331f">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -235,7 +237,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the position in the specified units </dd></dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a0a4e7cee0bbee6124aad5eacd146b7a3">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#ab132a1ffc38262dcaf1ca8f15f9c5ab2">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a36f6757412ba34a0704612d460193e67">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a6776af5a1dae17f80188ee4f99a28a54">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -264,7 +266,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 
 <p>Reset all encoders to 0. </p>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#abc1eaa2e1ff1e6071612f3c3ba1f4f60">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a355f01db5cead046c018555077a40580">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a44eb5c8ba5ec4f52481679d347de2cf6">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#aa5f9d06037b511121c3e9116e373f830">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -301,7 +303,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a1d9812f50609afc187cea29d4fa3ce24">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a0d1c8ca7ffe80603eacb753111eb4394">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a3c2cd2122fab6b3b95c51cfc01d51f32">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a7e8917c9fa77789a45fd1a6b18fbdcff">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -337,7 +339,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a2f13ef726f2f29697bb7e2b596ec3155">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#ae881027ef305210b5977977e1f00b0b3">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#adb933b240408ed8529f057c5b30808a6">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a85cbb47137ca2a70cc568f7a786ba8e0">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -365,15 +367,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Sets the straight <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. </p>
+<p>Sets the straight <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pid</td><td>a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object holding the constants for driving straight </td></tr>
+    <tr><td class="paramname">pid</td><td>a <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object holding the constants for driving straight </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#afa8cc2aa46c865e68a8721a51efe6612">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a5e0b59dea8ff2eb35e399da951932bd7">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a41122f79e92e5ab47a973075d4d69c32">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#ab8d5c2d70cf1b9144fe81d890f725718">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -401,15 +403,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Sets the turning <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. </p>
+<p>Sets the turning <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pid</td><td>a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> onject holding the constants for turning on the spot </td></tr>
+    <tr><td class="paramname">pid</td><td>a <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object holding the constants for turning on the spot </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a2543fd888403d79ad24dccd641a5a107">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a4c29ddd8d413037d73f11eb8af15b746">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a5b686a76b7fb6dba0d0e9d5086f1d7eb">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a7a06c17402e98d2411a062391b7a9e02">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -438,7 +440,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 
 <p>Stops the chassis using the default brake mode. </p>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a8c2aecf346bb47fbbc44390523baaf31">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a594da725e2f4c2a91a0ecd6d8c08237d">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a695cf906a1aeb8cf9e29d0f6829cfb90">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#ae053929060f4627b114346f32ce76a0a">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -476,7 +478,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Move the chassis forward a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">distance</td><td>the distance in inches </td></tr>
@@ -485,7 +487,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#ae0f2334762f6abe1a9b232524b981696">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#ac3b92676164ed3b6876af594aed5f7c5">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#ae6c1276d2a19e09369cd5062feec0a53">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a67bbcc6c17121d15f28e1716863ed3bf">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -523,7 +525,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Move the chassis forward asynchronously a specific distance with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">distance</td><td>the distance in inches </td></tr>
@@ -532,7 +534,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a9a34d6a34ad96a7b01fe33480eab0298">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a0d3cad13bc8323028eb7b4f170f230bb">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a301df8d9070eb5e936c3ae3e6b698ef2">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#ab6f71a23290df00fda55f2be3331595f">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -570,7 +572,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Turn the chassis on the spot with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">target_angle</td><td>the target angle in degrees </td></tr>
@@ -579,7 +581,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#ab222585938b9ca0b797be2013a83b919">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#aac6b61955ba3f1f6680b7f17ed1055cb">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a77ae88195f8c1791f682b1fe324cc814">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#aa9d25882563915beab73ef776d6bcc79">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -617,7 +619,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </table>
 </div><div class="memdoc">
 
-<p>Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
+<p>Turn the chassis on the spot asynchronously with <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>. <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> will always stay at or below the maximum speed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">target_angle</td><td>the target angle in degrees </td></tr>
@@ -626,7 +628,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#ace4eb4dfb5ca2dd5256b281141a89571">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a62527777660eaf788fda29018d9c3fb5">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a773d18be00236f3e08f8f6d06acf3a8e">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#ae5a00f399b97dcc410bd117d75bf5eef">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -655,7 +657,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 
 <p>Waits for the robot to finish a motion. </p>
 
-<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a3f01349974f06e391d773dee7078db7c">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a3e6440ce90fe4392bd7907efcf7de872">wpid::Tank</a>.</p>
+<p>Implemented in <a class="el" href="classwpid_1_1_h_drive.html#a45288914a57e8002cc4ac4471830fb54">wpid::HDrive</a>, and <a class="el" href="classwpid_1_1_tank.html#a3f50ccc7cd10acf4e2243f6bf976acb4">wpid::Tank</a>.</p>
 
 </div>
 </div>
@@ -725,7 +727,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classwpid_1_1_p_i_d.html">PID</a> objects for straight and turning motion </p>
+<p><a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> objects for straight and turning motion </p>
 
 </div>
 </div>
@@ -771,7 +773,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
   </tr>
 </table>
 </div><div class="memdoc">
-<p><a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> track width for <a class="el" href="classwpid_1_1_tank.html">Tank</a> drive </p>
+<p><a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> track width for <a class="el" href="classwpid_1_1_tank.html" title="An Tank chassis class that inherits from the Chassis virtual class. Contains functions for moving for...">Tank</a> drive </p>
 
 </div>
 </div>
@@ -799,7 +801,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>turn_offset</b> = 0<
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/austi/Documents/GitHub/WPID-Library/include/WPID/Chassis/<a class="el" href="_chassis_8h_source.html">Chassis.h</a></li>
+<li>include/WPID/Chassis/<a class="el" href="_chassis_8h_source.html">Chassis.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

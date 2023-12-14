@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pid_0',['pid',['../classwpid_1_1_p_i_d.html',1,'wpid::PID'],['../classwpid_1_1_p_i_d.html#af4361158112373435f91c4d462efa185',1,'wpid::PID::PID()']]],
-  ['pidstraight_1',['pidStraight',['../classwpid_1_1_chassis.html#a749b8244ac88359f60ec57818b1094d8',1,'wpid::Chassis']]]
+  ['left_0',['left',['../classwpid_1_1_chassis.html#a79e40cb0fa5ca995af737b1d8d0b670f',1,'wpid::Chassis']]],
+  ['library_20for_20vex_1',['WPID: A Simple PID Library for VEX',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['log_2',['LOG',['../classwpid_1_1_l_o_g.html',1,'wpid']]]
 ];

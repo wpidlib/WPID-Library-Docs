@@ -13,6 +13,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WPID Library<span id="projectnumber">&#160;4</span>
+   <div id="projectname">WPID Library<span id="projectnumber">&#160;5</span>
    </div>
   </td>
  </tr>
@@ -80,64 +82,71 @@ $(function() {
   <div class="headertitle"><div class="title">wpid::Mechanism Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="classwpid_1_1_mechanism.html" title="A Mechanism class that uses PID to control a motor group. Contains functions for moving to a relative...">Mechanism</a> class that uses <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> to control a motor group. Contains functions for moving to a relative or absolute angle both synchronously and asynchronously.  
+ <a href="classwpid_1_1_mechanism.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_mechanism_8h_source.html">Mechanism.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a681fa155537e5a3b3c64cd0df1dab537" id="r_a681fa155537e5a3b3c64cd0df1dab537"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a681fa155537e5a3b3c64cd0df1dab537">Mechanism</a> (vex::motor_group *motors, float gear_ratio, std::string mech_id)</td></tr>
-<tr class="memdesc:a681fa155537e5a3b3c64cd0df1dab537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classwpid_1_1_mechanism.html">Mechanism</a> object.  <br /></td></tr>
-<tr class="separator:a681fa155537e5a3b3c64cd0df1dab537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3de08bb32bdf197b410dbbd2b6db44fb" id="r_a3de08bb32bdf197b410dbbd2b6db44fb"><td class="memItemLeft" align="right" valign="top"><a id="a3de08bb32bdf197b410dbbd2b6db44fb" name="a3de08bb32bdf197b410dbbd2b6db44fb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Mechanism</b> (vex::motor_group *motors, float gear_ratio)</td></tr>
-<tr class="separator:a3de08bb32bdf197b410dbbd2b6db44fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af62d4265f978849bb982a80ae453ca92" id="r_af62d4265f978849bb982a80ae453ca92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#af62d4265f978849bb982a80ae453ca92">spin</a> (int velocity)</td></tr>
-<tr class="memdesc:af62d4265f978849bb982a80ae453ca92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spins the motor group at the specified velocity. Negative values will spin the motors backwards.  <br /></td></tr>
-<tr class="separator:af62d4265f978849bb982a80ae453ca92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8e27f29f4575fb8ceed465b79966b5b" id="r_ad8e27f29f4575fb8ceed465b79966b5b"><td class="memItemLeft" align="right" valign="top"><a id="ad8e27f29f4575fb8ceed465b79966b5b" name="ad8e27f29f4575fb8ceed465b79966b5b"></a>
+<tr class="memitem:a247c4a86c9c166be8d3c7eeb7d1d3d57" id="r_a247c4a86c9c166be8d3c7eeb7d1d3d57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a247c4a86c9c166be8d3c7eeb7d1d3d57">Mechanism</a> (vex::motor_group motors, float gear_ratio, std::string mech_id)</td></tr>
+<tr class="memdesc:a247c4a86c9c166be8d3c7eeb7d1d3d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classwpid_1_1_mechanism.html" title="A Mechanism class that uses PID to control a motor group. Contains functions for moving to a relative...">Mechanism</a> object.  <br /></td></tr>
+<tr class="separator:a247c4a86c9c166be8d3c7eeb7d1d3d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a0813289d9285a386d1a5b28e14efb8" id="r_a1a0813289d9285a386d1a5b28e14efb8"><td class="memItemLeft" align="right" valign="top"><a id="a1a0813289d9285a386d1a5b28e14efb8" name="a1a0813289d9285a386d1a5b28e14efb8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Mechanism</b> (vex::motor_group motors, float gear_ratio)</td></tr>
+<tr class="separator:a1a0813289d9285a386d1a5b28e14efb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd7ecc5519b2bf6d845457eb9a1e6f7" id="r_a8cd7ecc5519b2bf6d845457eb9a1e6f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a8cd7ecc5519b2bf6d845457eb9a1e6f7">spin</a> (int velocity)</td></tr>
+<tr class="memdesc:a8cd7ecc5519b2bf6d845457eb9a1e6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spins the motor group at the specified velocity. Negative values will spin the motors backwards.  <br /></td></tr>
+<tr class="separator:a8cd7ecc5519b2bf6d845457eb9a1e6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49c516376f4a7fd711b767ba23264430" id="r_a49c516376f4a7fd711b767ba23264430"><td class="memItemLeft" align="right" valign="top"><a id="a49c516376f4a7fd711b767ba23264430" name="a49c516376f4a7fd711b767ba23264430"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
-<tr class="memdesc:ad8e27f29f4575fb8ceed465b79966b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">stops the motors using the default brake mode. <br /></td></tr>
-<tr class="separator:ad8e27f29f4575fb8ceed465b79966b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b91cc60a84ebdcf07fad89f42a3c469" id="r_a1b91cc60a84ebdcf07fad89f42a3c469"><td class="memItemLeft" align="right" valign="top"><a id="a1b91cc60a84ebdcf07fad89f42a3c469" name="a1b91cc60a84ebdcf07fad89f42a3c469"></a>
+<tr class="memdesc:a49c516376f4a7fd711b767ba23264430"><td class="mdescLeft">&#160;</td><td class="mdescRight">stops the motors using the default brake mode. <br /></td></tr>
+<tr class="separator:a49c516376f4a7fd711b767ba23264430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b1be0029e186c4af7001ed22ea7c9d5" id="r_a0b1be0029e186c4af7001ed22ea7c9d5"><td class="memItemLeft" align="right" valign="top"><a id="a0b1be0029e186c4af7001ed22ea7c9d5" name="a0b1be0029e186c4af7001ed22ea7c9d5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>waitUntilSettled</b> ()</td></tr>
-<tr class="memdesc:a1b91cc60a84ebdcf07fad89f42a3c469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the mechanism to finish motion. <br /></td></tr>
-<tr class="separator:a1b91cc60a84ebdcf07fad89f42a3c469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae86852dba482125cc07fed366b2e2da1" id="r_ae86852dba482125cc07fed366b2e2da1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#ae86852dba482125cc07fed366b2e2da1">moveRelative</a> (float position, float max_speed)</td></tr>
-<tr class="memdesc:ae86852dba482125cc07fed366b2e2da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to a relative angle.  <br /></td></tr>
-<tr class="separator:ae86852dba482125cc07fed366b2e2da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9715dea7cc32464372123f0d0ec7ea89" id="r_a9715dea7cc32464372123f0d0ec7ea89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a9715dea7cc32464372123f0d0ec7ea89">moveRelativeAsync</a> (float position, float max_speed)</td></tr>
-<tr class="memdesc:a9715dea7cc32464372123f0d0ec7ea89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to a relative angle asynchronously.  <br /></td></tr>
-<tr class="separator:a9715dea7cc32464372123f0d0ec7ea89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c8b2993fc2c56ec57061785a481e91d" id="r_a7c8b2993fc2c56ec57061785a481e91d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a7c8b2993fc2c56ec57061785a481e91d">moveAbsolute</a> (float position, float max_speed)</td></tr>
-<tr class="memdesc:a7c8b2993fc2c56ec57061785a481e91d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to an absolute angle.  <br /></td></tr>
-<tr class="separator:a7c8b2993fc2c56ec57061785a481e91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa266ae25c92d16a1d43dfefa7352aaf" id="r_aaa266ae25c92d16a1d43dfefa7352aaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#aaa266ae25c92d16a1d43dfefa7352aaf">moveAbsoluteAsync</a> (float position, float max_speed)</td></tr>
-<tr class="memdesc:aaa266ae25c92d16a1d43dfefa7352aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to an absolute angle asynchronously.  <br /></td></tr>
-<tr class="separator:aaa266ae25c92d16a1d43dfefa7352aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7d54a0fff4f547c0ffd3830d9fd1340" id="r_ab7d54a0fff4f547c0ffd3830d9fd1340"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#ab7d54a0fff4f547c0ffd3830d9fd1340">getPosition</a> (vex::rotationUnits units)</td></tr>
-<tr class="memdesc:ab7d54a0fff4f547c0ffd3830d9fd1340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the position of the first motor in the group with the specified units.  <br /></td></tr>
-<tr class="separator:ab7d54a0fff4f547c0ffd3830d9fd1340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7aa4249e81b31da43c95b16907f1ed7" id="r_aa7aa4249e81b31da43c95b16907f1ed7"><td class="memItemLeft" align="right" valign="top"><a id="aa7aa4249e81b31da43c95b16907f1ed7" name="aa7aa4249e81b31da43c95b16907f1ed7"></a>
+<tr class="memdesc:a0b1be0029e186c4af7001ed22ea7c9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the mechanism to finish motion. <br /></td></tr>
+<tr class="separator:a0b1be0029e186c4af7001ed22ea7c9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b46f89abcc0d098257e01df21415aa" id="r_a87b46f89abcc0d098257e01df21415aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a87b46f89abcc0d098257e01df21415aa">moveRelative</a> (float position, float max_speed)</td></tr>
+<tr class="memdesc:a87b46f89abcc0d098257e01df21415aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to a relative angle.  <br /></td></tr>
+<tr class="separator:a87b46f89abcc0d098257e01df21415aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a869e82e01c88499eb20e42f0a4cbb5bc" id="r_a869e82e01c88499eb20e42f0a4cbb5bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a869e82e01c88499eb20e42f0a4cbb5bc">moveRelativeAsync</a> (float position, float max_speed)</td></tr>
+<tr class="memdesc:a869e82e01c88499eb20e42f0a4cbb5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to a relative angle asynchronously.  <br /></td></tr>
+<tr class="separator:a869e82e01c88499eb20e42f0a4cbb5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e" id="r_ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e">moveAbsolute</a> (float position, float max_speed)</td></tr>
+<tr class="memdesc:ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to an absolute angle.  <br /></td></tr>
+<tr class="separator:ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeee22a6227d53b434b87c86bf03f28e" id="r_aeeee22a6227d53b434b87c86bf03f28e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#aeeee22a6227d53b434b87c86bf03f28e">moveAbsoluteAsync</a> (float position, float max_speed)</td></tr>
+<tr class="memdesc:aeeee22a6227d53b434b87c86bf03f28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the mechanism to an absolute angle asynchronously.  <br /></td></tr>
+<tr class="separator:aeeee22a6227d53b434b87c86bf03f28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f26c33d7d2ce568ec3c7788f217a91" id="r_ae5f26c33d7d2ce568ec3c7788f217a91"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#ae5f26c33d7d2ce568ec3c7788f217a91">getPosition</a> (vex::rotationUnits units)</td></tr>
+<tr class="memdesc:ae5f26c33d7d2ce568ec3c7788f217a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the position of the first motor in the group with the specified units.  <br /></td></tr>
+<tr class="separator:ae5f26c33d7d2ce568ec3c7788f217a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc106912a7a110db6047212b445e9c80" id="r_adc106912a7a110db6047212b445e9c80"><td class="memItemLeft" align="right" valign="top"><a id="adc106912a7a110db6047212b445e9c80" name="adc106912a7a110db6047212b445e9c80"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()</td></tr>
-<tr class="memdesc:aa7aa4249e81b31da43c95b16907f1ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the encoders in the group to 0. <br /></td></tr>
-<tr class="separator:aa7aa4249e81b31da43c95b16907f1ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec7b1f401b46339883e9d3f17750bc1" id="r_acec7b1f401b46339883e9d3f17750bc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#acec7b1f401b46339883e9d3f17750bc1">setBrakeType</a> (vex::brakeType type)</td></tr>
-<tr class="memdesc:acec7b1f401b46339883e9d3f17750bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the brake type of the chassis.  <br /></td></tr>
-<tr class="separator:acec7b1f401b46339883e9d3f17750bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0248186c1c0164b0d246c162749ce11" id="r_ab0248186c1c0164b0d246c162749ce11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#ab0248186c1c0164b0d246c162749ce11">setPID</a> (<a class="el" href="classwpid_1_1_p_i_d.html">PID</a> pid)</td></tr>
-<tr class="memdesc:ab0248186c1c0164b0d246c162749ce11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object to the mechanism.  <br /></td></tr>
-<tr class="separator:ab0248186c1c0164b0d246c162749ce11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2a0f91ea3f366935a545dbaab510204" id="r_af2a0f91ea3f366935a545dbaab510204"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#af2a0f91ea3f366935a545dbaab510204">setOffset</a> (float offset)</td></tr>
-<tr class="memdesc:af2a0f91ea3f366935a545dbaab510204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the offset of the mechanism to add or subtract a constant angle.  <br /></td></tr>
-<tr class="separator:af2a0f91ea3f366935a545dbaab510204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeffa0f67a197f2a0cf1712b2fba7b9ad" id="r_aeffa0f67a197f2a0cf1712b2fba7b9ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#aeffa0f67a197f2a0cf1712b2fba7b9ad">setMaxAcceleration</a> (float max_accel)</td></tr>
-<tr class="memdesc:aeffa0f67a197f2a0cf1712b2fba7b9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the max acceleration of the mechanism. Every time the <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> loop executes, it increments the speed of the mechanism by this value until the mechanism reaches it's maximum speed. Increase the value if the robot is ramping too slow, or decrease if it causes too much jerk.  <br /></td></tr>
-<tr class="separator:aeffa0f67a197f2a0cf1712b2fba7b9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0a12fe52c96bf5266a447dc4ede1f9b" id="r_aa0a12fe52c96bf5266a447dc4ede1f9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#aa0a12fe52c96bf5266a447dc4ede1f9b">setBounds</a> (float lower_bound, float upper_bound)</td></tr>
-<tr class="memdesc:aa0a12fe52c96bf5266a447dc4ede1f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the bounds of the mechanism, such that it is unable to spin past these points. This check is only done during driver control and does not affect <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> motion.  <br /></td></tr>
-<tr class="separator:aa0a12fe52c96bf5266a447dc4ede1f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:adc106912a7a110db6047212b445e9c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the encoders in the group to 0. <br /></td></tr>
+<tr class="separator:adc106912a7a110db6047212b445e9c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef35f7a8952c4da0e3b26df9cffec3f5" id="r_aef35f7a8952c4da0e3b26df9cffec3f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#aef35f7a8952c4da0e3b26df9cffec3f5">setBrakeType</a> (vex::brakeType type)</td></tr>
+<tr class="memdesc:aef35f7a8952c4da0e3b26df9cffec3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the brake type of the chassis.  <br /></td></tr>
+<tr class="separator:aef35f7a8952c4da0e3b26df9cffec3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e17cc879befd085ea239c1ec02bedbe" id="r_a3e17cc879befd085ea239c1ec02bedbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a3e17cc879befd085ea239c1ec02bedbe">setPID</a> (<a class="el" href="classwpid_1_1_p_i_d.html">PID</a> pid)</td></tr>
+<tr class="memdesc:a3e17cc879befd085ea239c1ec02bedbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object to the mechanism.  <br /></td></tr>
+<tr class="separator:a3e17cc879befd085ea239c1ec02bedbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58cab26f438a15ceee71fe072d4d4ff" id="r_ab58cab26f438a15ceee71fe072d4d4ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#ab58cab26f438a15ceee71fe072d4d4ff">setOffset</a> (float offset)</td></tr>
+<tr class="memdesc:ab58cab26f438a15ceee71fe072d4d4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the offset of the mechanism to add or subtract a constant angle.  <br /></td></tr>
+<tr class="separator:ab58cab26f438a15ceee71fe072d4d4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad460978c29b101a5ba66f3f4a0108c2d" id="r_ad460978c29b101a5ba66f3f4a0108c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#ad460978c29b101a5ba66f3f4a0108c2d">setMaxAcceleration</a> (float max_accel)</td></tr>
+<tr class="memdesc:ad460978c29b101a5ba66f3f4a0108c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the max acceleration of the mechanism. Every time the <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> loop executes, it increments the speed of the mechanism by this value until the mechanism reaches it's maximum speed. Increase the value if the robot is ramping too slow, or decrease if it causes too much jerk.  <br /></td></tr>
+<tr class="separator:ad460978c29b101a5ba66f3f4a0108c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b434b02b9925a38fbf0a6280de7589b" id="r_a8b434b02b9925a38fbf0a6280de7589b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html#a8b434b02b9925a38fbf0a6280de7589b">setBounds</a> (float lower_bound, float upper_bound)</td></tr>
+<tr class="memdesc:a8b434b02b9925a38fbf0a6280de7589b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the bounds of the mechanism, such that it is unable to spin past these points. This check is only done during driver control and does not affect <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> motion.  <br /></td></tr>
+<tr class="separator:a8b434b02b9925a38fbf0a6280de7589b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a681fa155537e5a3b3c64cd0df1dab537" name="a681fa155537e5a3b3c64cd0df1dab537"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a681fa155537e5a3b3c64cd0df1dab537">&#9670;&#160;</a></span>Mechanism()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="classwpid_1_1_mechanism.html" title="A Mechanism class that uses PID to control a motor group. Contains functions for moving to a relative...">Mechanism</a> class that uses <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> to control a motor group. Contains functions for moving to a relative or absolute angle both synchronously and asynchronously. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a247c4a86c9c166be8d3c7eeb7d1d3d57" name="a247c4a86c9c166be8d3c7eeb7d1d3d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a247c4a86c9c166be8d3c7eeb7d1d3d57">&#9670;&#160;</a></span>Mechanism()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +154,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
         <tr>
           <td class="memname">wpid::Mechanism::Mechanism </td>
           <td>(</td>
-          <td class="paramtype">vex::motor_group *&#160;</td>
+          <td class="paramtype">vex::motor_group&#160;</td>
           <td class="paramname"><em>motors</em>, </td>
         </tr>
         <tr>
@@ -168,7 +177,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classwpid_1_1_mechanism.html">Mechanism</a> object. </p>
+<p>Construct a new <a class="el" href="classwpid_1_1_mechanism.html" title="A Mechanism class that uses PID to control a motor group. Contains functions for moving to a relative...">Mechanism</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">motors</td><td>the motors used on the mechanism </td></tr>
@@ -181,14 +190,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab7d54a0fff4f547c0ffd3830d9fd1340" name="ab7d54a0fff4f547c0ffd3830d9fd1340"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7d54a0fff4f547c0ffd3830d9fd1340">&#9670;&#160;</a></span>getPosition()</h2>
+<a id="ae5f26c33d7d2ce568ec3c7788f217a91" name="ae5f26c33d7d2ce568ec3c7788f217a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f26c33d7d2ce568ec3c7788f217a91">&#9670;&#160;</a></span>getPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float wpid::Mechanism::getPosition </td>
+          <td class="memname">float Mechanism::getPosition </td>
           <td>(</td>
           <td class="paramtype">vex::rotationUnits&#160;</td>
           <td class="paramname"><em>units</em></td><td>)</td>
@@ -208,14 +217,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="a7c8b2993fc2c56ec57061785a481e91d" name="a7c8b2993fc2c56ec57061785a481e91d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c8b2993fc2c56ec57061785a481e91d">&#9670;&#160;</a></span>moveAbsolute()</h2>
+<a id="ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e" name="ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac72a2cb2a4ccd2dd7dc6e16e5c1c3b6e">&#9670;&#160;</a></span>moveAbsolute()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::moveAbsolute </td>
+          <td class="memname">void Mechanism::moveAbsolute </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>position</em>, </td>
@@ -245,14 +254,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="aaa266ae25c92d16a1d43dfefa7352aaf" name="aaa266ae25c92d16a1d43dfefa7352aaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa266ae25c92d16a1d43dfefa7352aaf">&#9670;&#160;</a></span>moveAbsoluteAsync()</h2>
+<a id="aeeee22a6227d53b434b87c86bf03f28e" name="aeeee22a6227d53b434b87c86bf03f28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeee22a6227d53b434b87c86bf03f28e">&#9670;&#160;</a></span>moveAbsoluteAsync()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::moveAbsoluteAsync </td>
+          <td class="memname">void Mechanism::moveAbsoluteAsync </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>position</em>, </td>
@@ -282,14 +291,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="ae86852dba482125cc07fed366b2e2da1" name="ae86852dba482125cc07fed366b2e2da1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae86852dba482125cc07fed366b2e2da1">&#9670;&#160;</a></span>moveRelative()</h2>
+<a id="a87b46f89abcc0d098257e01df21415aa" name="a87b46f89abcc0d098257e01df21415aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b46f89abcc0d098257e01df21415aa">&#9670;&#160;</a></span>moveRelative()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::moveRelative </td>
+          <td class="memname">void Mechanism::moveRelative </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>position</em>, </td>
@@ -319,14 +328,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="a9715dea7cc32464372123f0d0ec7ea89" name="a9715dea7cc32464372123f0d0ec7ea89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9715dea7cc32464372123f0d0ec7ea89">&#9670;&#160;</a></span>moveRelativeAsync()</h2>
+<a id="a869e82e01c88499eb20e42f0a4cbb5bc" name="a869e82e01c88499eb20e42f0a4cbb5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869e82e01c88499eb20e42f0a4cbb5bc">&#9670;&#160;</a></span>moveRelativeAsync()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::moveRelativeAsync </td>
+          <td class="memname">void Mechanism::moveRelativeAsync </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>position</em>, </td>
@@ -356,14 +365,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="aa0a12fe52c96bf5266a447dc4ede1f9b" name="aa0a12fe52c96bf5266a447dc4ede1f9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0a12fe52c96bf5266a447dc4ede1f9b">&#9670;&#160;</a></span>setBounds()</h2>
+<a id="a8b434b02b9925a38fbf0a6280de7589b" name="a8b434b02b9925a38fbf0a6280de7589b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b434b02b9925a38fbf0a6280de7589b">&#9670;&#160;</a></span>setBounds()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::setBounds </td>
+          <td class="memname">void Mechanism::setBounds </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>lower_bound</em>, </td>
@@ -382,7 +391,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
       </table>
 </div><div class="memdoc">
 
-<p>Set the bounds of the mechanism, such that it is unable to spin past these points. This check is only done during driver control and does not affect <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> motion. </p>
+<p>Set the bounds of the mechanism, such that it is unable to spin past these points. This check is only done during driver control and does not affect <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> motion. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lower_bound</td><td>the lowest encoder value the mechanism may move to in degrees </td></tr>
@@ -393,14 +402,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="acec7b1f401b46339883e9d3f17750bc1" name="acec7b1f401b46339883e9d3f17750bc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acec7b1f401b46339883e9d3f17750bc1">&#9670;&#160;</a></span>setBrakeType()</h2>
+<a id="aef35f7a8952c4da0e3b26df9cffec3f5" name="aef35f7a8952c4da0e3b26df9cffec3f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef35f7a8952c4da0e3b26df9cffec3f5">&#9670;&#160;</a></span>setBrakeType()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::setBrakeType </td>
+          <td class="memname">void Mechanism::setBrakeType </td>
           <td>(</td>
           <td class="paramtype">vex::brakeType&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
@@ -419,14 +428,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="aeffa0f67a197f2a0cf1712b2fba7b9ad" name="aeffa0f67a197f2a0cf1712b2fba7b9ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeffa0f67a197f2a0cf1712b2fba7b9ad">&#9670;&#160;</a></span>setMaxAcceleration()</h2>
+<a id="ad460978c29b101a5ba66f3f4a0108c2d" name="ad460978c29b101a5ba66f3f4a0108c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad460978c29b101a5ba66f3f4a0108c2d">&#9670;&#160;</a></span>setMaxAcceleration()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::setMaxAcceleration </td>
+          <td class="memname">void Mechanism::setMaxAcceleration </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>max_accel</em></td><td>)</td>
@@ -435,7 +444,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
       </table>
 </div><div class="memdoc">
 
-<p>Set the max acceleration of the mechanism. Every time the <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> loop executes, it increments the speed of the mechanism by this value until the mechanism reaches it's maximum speed. Increase the value if the robot is ramping too slow, or decrease if it causes too much jerk. </p>
+<p>Set the max acceleration of the mechanism. Every time the <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> loop executes, it increments the speed of the mechanism by this value until the mechanism reaches it's maximum speed. Increase the value if the robot is ramping too slow, or decrease if it causes too much jerk. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">max_accel</td><td>a value to increment to ramp the speed up in velocityUnits::pct </td></tr>
@@ -445,14 +454,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="af2a0f91ea3f366935a545dbaab510204" name="af2a0f91ea3f366935a545dbaab510204"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2a0f91ea3f366935a545dbaab510204">&#9670;&#160;</a></span>setOffset()</h2>
+<a id="ab58cab26f438a15ceee71fe072d4d4ff" name="ab58cab26f438a15ceee71fe072d4d4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58cab26f438a15ceee71fe072d4d4ff">&#9670;&#160;</a></span>setOffset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::setOffset </td>
+          <td class="memname">void Mechanism::setOffset </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>offset</em></td><td>)</td>
@@ -471,14 +480,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<a id="ab0248186c1c0164b0d246c162749ce11" name="ab0248186c1c0164b0d246c162749ce11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0248186c1c0164b0d246c162749ce11">&#9670;&#160;</a></span>setPID()</h2>
+<a id="a3e17cc879befd085ea239c1ec02bedbe" name="a3e17cc879befd085ea239c1ec02bedbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e17cc879befd085ea239c1ec02bedbe">&#9670;&#160;</a></span>setPID()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::setPID </td>
+          <td class="memname">void Mechanism::setPID </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classwpid_1_1_p_i_d.html">PID</a>&#160;</td>
           <td class="paramname"><em>pid</em></td><td>)</td>
@@ -487,24 +496,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
       </table>
 </div><div class="memdoc">
 
-<p>Set a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object to the mechanism. </p>
+<p>Set a <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object to the mechanism. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="classwpid_1_1_p_i_d.html">PID</a></td><td>a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object </td></tr>
+    <tr><td class="paramname"><a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a></td><td>a <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="af62d4265f978849bb982a80ae453ca92" name="af62d4265f978849bb982a80ae453ca92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af62d4265f978849bb982a80ae453ca92">&#9670;&#160;</a></span>spin()</h2>
+<a id="a8cd7ecc5519b2bf6d845457eb9a1e6f7" name="a8cd7ecc5519b2bf6d845457eb9a1e6f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd7ecc5519b2bf6d845457eb9a1e6f7">&#9670;&#160;</a></span>spin()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::Mechanism::spin </td>
+          <td class="memname">void Mechanism::spin </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>velocity</em></td><td>)</td>
@@ -523,8 +532,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resetPosition</b> ()<
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/austi/Documents/GitHub/WPID-Library/include/WPID/Mechanism/<a class="el" href="_mechanism_8h_source.html">Mechanism.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/WPID/Mechanism/<a class="el" href="_mechanism_8h_source.html">Mechanism.h</a></li>
+<li>src/WPID/Mechanism/<b>Mechanism.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

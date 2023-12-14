@@ -13,6 +13,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WPID Library<span id="projectnumber">&#160;4</span>
+   <div id="projectname">WPID Library<span id="projectnumber">&#160;5</span>
    </div>
   </td>
  </tr>
@@ -80,6 +82,11 @@ $(function() {
   <div class="headertitle"><div class="title">wpid::Conversion Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="classwpid_1_1_conversion.html" title="A Conversion class used to convert distances to other units. Also used to standardize units to inches...">Conversion</a> class used to convert distances to other units. Also used to standardize units to inches in the internal calculation.  
+ <a href="classwpid_1_1_conversion.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_conversion_8h_source.html">Conversion.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -98,14 +105,16 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a5f7b8f3601d6f4ccef4777e52f65b660" id="r_a5f7b8f3601d6f4ccef4777e52f65b660"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_conversion.html#a5f7b8f3601d6f4ccef4777e52f65b660">standardize</a> (float value, <a class="el" href="classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0d">measurement</a> value_type)</td></tr>
-<tr class="memdesc:a5f7b8f3601d6f4ccef4777e52f65b660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts any measured value to the standardized units used in this library.  <br /></td></tr>
-<tr class="separator:a5f7b8f3601d6f4ccef4777e52f65b660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44cf05c263893c2fde857aada3c5a459" id="r_a44cf05c263893c2fde857aada3c5a459"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_conversion.html#a44cf05c263893c2fde857aada3c5a459">convertTo</a> (float value, <a class="el" href="classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0d">measurement</a> output_type)</td></tr>
-<tr class="memdesc:a44cf05c263893c2fde857aada3c5a459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a value in the standardized units used in this library to preferred units.  <br /></td></tr>
-<tr class="separator:a44cf05c263893c2fde857aada3c5a459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4d0324bce5cc3b41a6e0880f9bcc1f" id="r_acc4d0324bce5cc3b41a6e0880f9bcc1f"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_conversion.html#acc4d0324bce5cc3b41a6e0880f9bcc1f">standardize</a> (float value, <a class="el" href="classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0d">measurement</a> value_type)</td></tr>
+<tr class="memdesc:acc4d0324bce5cc3b41a6e0880f9bcc1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts any measured value to the standardized units used in this library.  <br /></td></tr>
+<tr class="separator:acc4d0324bce5cc3b41a6e0880f9bcc1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f1bdf77b77fbc7e75f2b1aabbc1812" id="r_ad7f1bdf77b77fbc7e75f2b1aabbc1812"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_conversion.html#ad7f1bdf77b77fbc7e75f2b1aabbc1812">convertTo</a> (float value, <a class="el" href="classwpid_1_1_conversion.html#aa6b9c9725c6ce19e464563e4401e5c0d">measurement</a> output_type)</td></tr>
+<tr class="memdesc:ad7f1bdf77b77fbc7e75f2b1aabbc1812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a value in the standardized units used in this library to preferred units.  <br /></td></tr>
+<tr class="separator:ad7f1bdf77b77fbc7e75f2b1aabbc1812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="classwpid_1_1_conversion.html" title="A Conversion class used to convert distances to other units. Also used to standardize units to inches...">Conversion</a> class used to convert distances to other units. Also used to standardize units to inches in the internal calculation. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa6b9c9725c6ce19e464563e4401e5c0d" name="aa6b9c9725c6ce19e464563e4401e5c0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6b9c9725c6ce19e464563e4401e5c0d">&#9670;&#160;</a></span>measurement</h2>
 
@@ -145,8 +154,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a44cf05c263893c2fde857aada3c5a459" name="a44cf05c263893c2fde857aada3c5a459"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44cf05c263893c2fde857aada3c5a459">&#9670;&#160;</a></span>convertTo()</h2>
+<a id="ad7f1bdf77b77fbc7e75f2b1aabbc1812" name="ad7f1bdf77b77fbc7e75f2b1aabbc1812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f1bdf77b77fbc7e75f2b1aabbc1812">&#9670;&#160;</a></span>convertTo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,7 +164,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static float wpid::Conversion::convertTo </td>
+          <td class="memname">float Conversion::convertTo </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -190,8 +199,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5f7b8f3601d6f4ccef4777e52f65b660" name="a5f7b8f3601d6f4ccef4777e52f65b660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f7b8f3601d6f4ccef4777e52f65b660">&#9670;&#160;</a></span>standardize()</h2>
+<a id="acc4d0324bce5cc3b41a6e0880f9bcc1f" name="acc4d0324bce5cc3b41a6e0880f9bcc1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4d0324bce5cc3b41a6e0880f9bcc1f">&#9670;&#160;</a></span>standardize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +209,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static float wpid::Conversion::standardize </td>
+          <td class="memname">float Conversion::standardize </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -235,8 +244,9 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/austi/Documents/GitHub/WPID-Library/include/WPID/<a class="el" href="_conversion_8h_source.html">Conversion.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/WPID/<a class="el" href="_conversion_8h_source.html">Conversion.h</a></li>
+<li>src/WPID/<b>Conversion.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

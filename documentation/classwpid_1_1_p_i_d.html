@@ -13,6 +13,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WPID Library<span id="projectnumber">&#160;4</span>
+   <div id="projectname">WPID Library<span id="projectnumber">&#160;5</span>
    </div>
   </td>
  </tr>
@@ -79,51 +81,52 @@ $(function() {
   <div class="headertitle"><div class="title">wpid::PID Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> class that stores constants and calculates the speed of a motor or motor group with respect to its current error and other internal factors.  
+ <a href="classwpid_1_1_p_i_d.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_p_i_d_8h_source.html">PID.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af4361158112373435f91c4d462efa185" id="r_af4361158112373435f91c4d462efa185"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#af4361158112373435f91c4d462efa185">PID</a> (float kp, float ki, float kd)</td></tr>
-<tr class="memdesc:af4361158112373435f91c4d462efa185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. When constructing a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object, only the kp constant is required, ki and kd can be set to 0 if not used.  <br /></td></tr>
+<tr class="memdesc:af4361158112373435f91c4d462efa185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object. When constructing a <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object, only the kp constant is required, ki and kd can be set to 0 if not used.  <br /></td></tr>
 <tr class="separator:af4361158112373435f91c4d462efa185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f29aba611577617beb42a9f07a6046" id="r_ac4f29aba611577617beb42a9f07a6046"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#ac4f29aba611577617beb42a9f07a6046">calculateSpeed</a> (float error, float max_speed, std::string mech_id)</td></tr>
-<tr class="memdesc:ac4f29aba611577617beb42a9f07a6046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to calculate the velocity of a motor or motor group. The speed is calculated using <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>, with integral clamping, bias maintaining, and speed clamping.  <br /></td></tr>
-<tr class="separator:ac4f29aba611577617beb42a9f07a6046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad96f05753ad7ff8eff30baa46eed4424" id="r_ad96f05753ad7ff8eff30baa46eed4424"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#ad96f05753ad7ff8eff30baa46eed4424">setErrorRange</a> (float bound)</td></tr>
-<tr class="memdesc:ad96f05753ad7ff8eff30baa46eed4424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the error range in rotationUnits::deg.  <br /></td></tr>
-<tr class="separator:ad96f05753ad7ff8eff30baa46eed4424"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9de2d8b01875c134249ea685815a916f" id="r_a9de2d8b01875c134249ea685815a916f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a9de2d8b01875c134249ea685815a916f">setDelayTime</a> (int delay)</td></tr>
-<tr class="memdesc:a9de2d8b01875c134249ea685815a916f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the delay used in the <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> loop. Default value is 20ms.  <br /></td></tr>
-<tr class="separator:a9de2d8b01875c134249ea685815a916f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a276dd5bcb4f7bb2e4b4886248c27e439" id="r_a276dd5bcb4f7bb2e4b4886248c27e439"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a276dd5bcb4f7bb2e4b4886248c27e439">getDelayTime</a> ()</td></tr>
-<tr class="memdesc:a276dd5bcb4f7bb2e4b4886248c27e439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delay time of this <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object in milliseconds.  <br /></td></tr>
-<tr class="separator:a276dd5bcb4f7bb2e4b4886248c27e439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0cd08dc5f59ed37faa13ca2b0850c5c" id="r_aa0cd08dc5f59ed37faa13ca2b0850c5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#aa0cd08dc5f59ed37faa13ca2b0850c5c">setBias</a> (int bias)</td></tr>
-<tr class="memdesc:aa0cd08dc5f59ed37faa13ca2b0850c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the bias, or the lowest speed possible for the system. Default value is 0.  <br /></td></tr>
-<tr class="separator:aa0cd08dc5f59ed37faa13ca2b0850c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2063d36fe43a362a4edb53ecd1ec8dd9" id="r_a2063d36fe43a362a4edb53ecd1ec8dd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a2063d36fe43a362a4edb53ecd1ec8dd9">setLowSpeedThreshold</a> (int threshold)</td></tr>
-<tr class="memdesc:a2063d36fe43a362a4edb53ecd1ec8dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the low speed threshold to determine when the system is slow. If the speed of the system is below this threshold, the loop will end if it is also within the error range. Otherwise the system will continue to correct for any error.  <br /></td></tr>
-<tr class="separator:a2063d36fe43a362a4edb53ecd1ec8dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ac113c4c777df7e8aa7e697ec8b4cd" id="r_a42ac113c4c777df7e8aa7e697ec8b4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a42ac113c4c777df7e8aa7e697ec8b4cd">setTimeout</a> (int timeout)</td></tr>
-<tr class="memdesc:a42ac113c4c777df7e8aa7e697ec8b4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout to use for <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> movement. If the timeout is exceeded, the system will stop regardless of the current error or speed. A value of -1 will disable timeouts.  <br /></td></tr>
-<tr class="separator:a42ac113c4c777df7e8aa7e697ec8b4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6422c741e9d6ce4ebd56b39a7a459d1" id="r_ae6422c741e9d6ce4ebd56b39a7a459d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#ae6422c741e9d6ce4ebd56b39a7a459d1">setMaxIntegral</a> (int max_integral)</td></tr>
-<tr class="memdesc:ae6422c741e9d6ce4ebd56b39a7a459d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum value the integral term will contribute to the speed calculations. If the integral term exceeds this value, it will be reduced to this value.  <br /></td></tr>
-<tr class="separator:ae6422c741e9d6ce4ebd56b39a7a459d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96f94b4baf1755c1f98f231c8fcbf920" id="r_a96f94b4baf1755c1f98f231c8fcbf920"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a96f94b4baf1755c1f98f231c8fcbf920">unfinished</a> (float error, int speed)</td></tr>
-<tr class="memdesc:a96f94b4baf1755c1f98f231c8fcbf920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the movement is unfinished (error still outside the final bounds).  <br /></td></tr>
-<tr class="separator:a96f94b4baf1755c1f98f231c8fcbf920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9215594d372bbc9d1fe7ca4eda173290" id="r_a9215594d372bbc9d1fe7ca4eda173290"><td class="memItemLeft" align="right" valign="top"><a id="a9215594d372bbc9d1fe7ca4eda173290" name="a9215594d372bbc9d1fe7ca4eda173290"></a>
+<tr class="memitem:a3bfacc11edb6718bbbef0ec6ec8eb11c" id="r_a3bfacc11edb6718bbbef0ec6ec8eb11c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a3bfacc11edb6718bbbef0ec6ec8eb11c">calculateSpeed</a> (float error, float max_speed, std::string mech_id)</td></tr>
+<tr class="memdesc:a3bfacc11edb6718bbbef0ec6ec8eb11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to calculate the velocity of a motor or motor group. The speed is calculated using <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>, with integral clamping, and speed clamping.  <br /></td></tr>
+<tr class="separator:a3bfacc11edb6718bbbef0ec6ec8eb11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac563bcb579293d97a9bda545dcb4f5e5" id="r_ac563bcb579293d97a9bda545dcb4f5e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#ac563bcb579293d97a9bda545dcb4f5e5">setErrorRange</a> (float degrees)</td></tr>
+<tr class="memdesc:ac563bcb579293d97a9bda545dcb4f5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the error range in rotationUnits::deg.  <br /></td></tr>
+<tr class="separator:ac563bcb579293d97a9bda545dcb4f5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e662a942c1b5538a8c6d9ebc9d99f4" id="r_af5e662a942c1b5538a8c6d9ebc9d99f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#af5e662a942c1b5538a8c6d9ebc9d99f4">getDelayTime</a> ()</td></tr>
+<tr class="memdesc:af5e662a942c1b5538a8c6d9ebc9d99f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delay time of this <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object in milliseconds.  <br /></td></tr>
+<tr class="separator:af5e662a942c1b5538a8c6d9ebc9d99f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa553ed74efc9ca7d6e318741889f9b1a" id="r_aa553ed74efc9ca7d6e318741889f9b1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#aa553ed74efc9ca7d6e318741889f9b1a">setLowSpeedThreshold</a> (int threshold)</td></tr>
+<tr class="memdesc:aa553ed74efc9ca7d6e318741889f9b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the low speed threshold to determine when the system is slow. If the speed of the system is below this threshold, the loop will end if it is also within the error range. Otherwise the system will continue to correct for any error.  <br /></td></tr>
+<tr class="separator:aa553ed74efc9ca7d6e318741889f9b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d2c7dd905139996310f6df82673aa4" id="r_a36d2c7dd905139996310f6df82673aa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a36d2c7dd905139996310f6df82673aa4">setTimeout</a> (int timeout)</td></tr>
+<tr class="memdesc:a36d2c7dd905139996310f6df82673aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the timeout to use for <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> movement. If the timeout is exceeded, the system will stop regardless of the current error or speed. A value of -1 will disable timeouts.  <br /></td></tr>
+<tr class="separator:a36d2c7dd905139996310f6df82673aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a729fb87839cb00866870133e7a46b3a9" id="r_a729fb87839cb00866870133e7a46b3a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a729fb87839cb00866870133e7a46b3a9">setMaxIntegral</a> (int max_integral)</td></tr>
+<tr class="memdesc:a729fb87839cb00866870133e7a46b3a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum value the integral term will contribute to the speed calculations. If the integral term exceeds this value, it will be reduced to this value.  <br /></td></tr>
+<tr class="separator:a729fb87839cb00866870133e7a46b3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff502b66bc6efb46f27de4e15fdeff8" id="r_a7ff502b66bc6efb46f27de4e15fdeff8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a7ff502b66bc6efb46f27de4e15fdeff8">unfinished</a> (float error, int speed)</td></tr>
+<tr class="memdesc:a7ff502b66bc6efb46f27de4e15fdeff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the movement is unfinished (error still outside the final bounds).  <br /></td></tr>
+<tr class="separator:a7ff502b66bc6efb46f27de4e15fdeff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73cdd43d93f2cfcf19b62f7e5022bb90" id="r_a73cdd43d93f2cfcf19b62f7e5022bb90"><td class="memItemLeft" align="right" valign="top"><a id="a73cdd43d93f2cfcf19b62f7e5022bb90" name="a73cdd43d93f2cfcf19b62f7e5022bb90"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td></tr>
-<tr class="memdesc:a9215594d372bbc9d1fe7ca4eda173290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the previous error and previous integral values. <br /></td></tr>
-<tr class="separator:a9215594d372bbc9d1fe7ca4eda173290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21c7f8f5f52b1cc46d43da4fd1da2450" id="r_a21c7f8f5f52b1cc46d43da4fd1da2450"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classwpid_1_1_p_i_d.html">PID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a21c7f8f5f52b1cc46d43da4fd1da2450">copy</a> (void)</td></tr>
-<tr class="memdesc:a21c7f8f5f52b1cc46d43da4fd1da2450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates the <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object by copying constants and returning a new <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. Used as a helper for using the same constants on multiple mechanisms.  <br /></td></tr>
-<tr class="separator:a21c7f8f5f52b1cc46d43da4fd1da2450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664344d2fa77bcec02ecbaa3f6b9246b" id="r_a664344d2fa77bcec02ecbaa3f6b9246b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a664344d2fa77bcec02ecbaa3f6b9246b">fileLogging</a> (float error, float speed, float proportional, float integral, float derivative, std::string mech_id)</td></tr>
-<tr class="memdesc:a664344d2fa77bcec02ecbaa3f6b9246b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs the error, speed, integral and derivative values to a text file on a micro SD card on the robot.  <br /></td></tr>
-<tr class="separator:a664344d2fa77bcec02ecbaa3f6b9246b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a73cdd43d93f2cfcf19b62f7e5022bb90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the previous error and previous integral values. <br /></td></tr>
+<tr class="separator:a73cdd43d93f2cfcf19b62f7e5022bb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9edc848012cc97380d9657f79711513f" id="r_a9edc848012cc97380d9657f79711513f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classwpid_1_1_p_i_d.html">PID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a9edc848012cc97380d9657f79711513f">copy</a> (void)</td></tr>
+<tr class="memdesc:a9edc848012cc97380d9657f79711513f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates the <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object by copying constants and returning a new <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object. Used as a helper for using the same constants on multiple mechanisms.  <br /></td></tr>
+<tr class="separator:a9edc848012cc97380d9657f79711513f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494c517483bf56ec3b79c7bb2d30c064" id="r_a494c517483bf56ec3b79c7bb2d30c064"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html#a494c517483bf56ec3b79c7bb2d30c064">fileLogging</a> (float error, float speed, float proportional, float integral, float derivative, std::string mech_id)</td></tr>
+<tr class="memdesc:a494c517483bf56ec3b79c7bb2d30c064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs the error, speed, integral and derivative values to a text file on a micro SD card on the robot.  <br /></td></tr>
+<tr class="separator:a494c517483bf56ec3b79c7bb2d30c064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> class that stores constants and calculates the speed of a motor or motor group with respect to its current error and other internal factors. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af4361158112373435f91c4d462efa185" name="af4361158112373435f91c4d462efa185"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4361158112373435f91c4d462efa185">&#9670;&#160;</a></span>PID()</h2>
 
@@ -164,12 +167,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. When constructing a <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object, only the kp constant is required, ki and kd can be set to 0 if not used. </p>
+<p>Construct a new <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object. When constructing a <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object, only the kp constant is required, ki and kd can be set to 0 if not used. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">kp</td><td>proportional constant </td></tr>
     <tr><td class="paramname">ki</td><td>integral constant </td></tr>
-    <tr><td class="paramname">kd</td><td>derrivative constant </td></tr>
+    <tr><td class="paramname">kd</td><td>derivative constant </td></tr>
   </table>
   </dd>
 </dl>
@@ -177,14 +180,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac4f29aba611577617beb42a9f07a6046" name="ac4f29aba611577617beb42a9f07a6046"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4f29aba611577617beb42a9f07a6046">&#9670;&#160;</a></span>calculateSpeed()</h2>
+<a id="a3bfacc11edb6718bbbef0ec6ec8eb11c" name="a3bfacc11edb6718bbbef0ec6ec8eb11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bfacc11edb6718bbbef0ec6ec8eb11c">&#9670;&#160;</a></span>calculateSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float wpid::PID::calculateSpeed </td>
+          <td class="memname">float PID::calculateSpeed </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>error</em>, </td>
@@ -209,7 +212,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
       </table>
 </div><div class="memdoc">
 
-<p>Used to calculate the velocity of a motor or motor group. The speed is calculated using <a class="el" href="classwpid_1_1_p_i_d.html">PID</a>, with integral clamping, bias maintaining, and speed clamping. </p>
+<p>Used to calculate the velocity of a motor or motor group. The speed is calculated using <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a>, with integral clamping, and speed clamping. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">error</td><td>the remaining distance to the target </td></tr>
@@ -218,18 +221,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a calculated speed based on all <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> parameters </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a calculated speed based on all <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> parameters </dd></dl>
 
 </div>
 </div>
-<a id="a21c7f8f5f52b1cc46d43da4fd1da2450" name="a21c7f8f5f52b1cc46d43da4fd1da2450"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21c7f8f5f52b1cc46d43da4fd1da2450">&#9670;&#160;</a></span>copy()</h2>
+<a id="a9edc848012cc97380d9657f79711513f" name="a9edc848012cc97380d9657f79711513f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9edc848012cc97380d9657f79711513f">&#9670;&#160;</a></span>copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classwpid_1_1_p_i_d.html">PID</a> wpid::PID::copy </td>
+          <td class="memname"><a class="el" href="classwpid_1_1_p_i_d.html">PID</a> PID::copy </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -238,19 +241,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
       </table>
 </div><div class="memdoc">
 
-<p>Duplicates the <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object by copying constants and returning a new <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object. Used as a helper for using the same constants on multiple mechanisms. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwpid_1_1_p_i_d.html">PID</a> </dd></dl>
+<p>Duplicates the <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object by copying constants and returning a new <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object. Used as a helper for using the same constants on multiple mechanisms. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> </dd></dl>
 
 </div>
 </div>
-<a id="a664344d2fa77bcec02ecbaa3f6b9246b" name="a664344d2fa77bcec02ecbaa3f6b9246b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a664344d2fa77bcec02ecbaa3f6b9246b">&#9670;&#160;</a></span>fileLogging()</h2>
+<a id="a494c517483bf56ec3b79c7bb2d30c064" name="a494c517483bf56ec3b79c7bb2d30c064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a494c517483bf56ec3b79c7bb2d30c064">&#9670;&#160;</a></span>fileLogging()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::PID::fileLogging </td>
+          <td class="memname">void PID::fileLogging </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>error</em>, </td>
@@ -308,14 +311,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 
 </div>
 </div>
-<a id="a276dd5bcb4f7bb2e4b4886248c27e439" name="a276dd5bcb4f7bb2e4b4886248c27e439"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a276dd5bcb4f7bb2e4b4886248c27e439">&#9670;&#160;</a></span>getDelayTime()</h2>
+<a id="af5e662a942c1b5538a8c6d9ebc9d99f4" name="af5e662a942c1b5538a8c6d9ebc9d99f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e662a942c1b5538a8c6d9ebc9d99f4">&#9670;&#160;</a></span>getDelayTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int wpid::PID::getDelayTime </td>
+          <td class="memname">int PID::getDelayTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -323,74 +326,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the delay time of this <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> object in milliseconds. </p>
+<p>Gets the delay time of this <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> object in milliseconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>int milliseconds </dd></dl>
 
 </div>
 </div>
-<a id="aa0cd08dc5f59ed37faa13ca2b0850c5c" name="aa0cd08dc5f59ed37faa13ca2b0850c5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0cd08dc5f59ed37faa13ca2b0850c5c">&#9670;&#160;</a></span>setBias()</h2>
+<a id="ac563bcb579293d97a9bda545dcb4f5e5" name="ac563bcb579293d97a9bda545dcb4f5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac563bcb579293d97a9bda545dcb4f5e5">&#9670;&#160;</a></span>setErrorRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::PID::setBias </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bias</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the bias, or the lowest speed possible for the system. Default value is 0. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bias</td><td>in velocityUnits::pct </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9de2d8b01875c134249ea685815a916f" name="a9de2d8b01875c134249ea685815a916f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9de2d8b01875c134249ea685815a916f">&#9670;&#160;</a></span>setDelayTime()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void wpid::PID::setDelayTime </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>delay</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the delay used in the <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> loop. Default value is 20ms. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">delay</td><td>in milliseconds </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad96f05753ad7ff8eff30baa46eed4424" name="ad96f05753ad7ff8eff30baa46eed4424"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad96f05753ad7ff8eff30baa46eed4424">&#9670;&#160;</a></span>setErrorRange()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void wpid::PID::setErrorRange </td>
+          <td class="memname">void PID::setErrorRange </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>bound</em></td><td>)</td>
+          <td class="paramname"><em>degrees</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -399,21 +350,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 <p>Set the error range in rotationUnits::deg. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bound</td><td>the absolute value of the bounds of the error range </td></tr>
+    <tr><td class="paramname">degrees</td><td>the absolute value of the bounds of the error range </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a2063d36fe43a362a4edb53ecd1ec8dd9" name="a2063d36fe43a362a4edb53ecd1ec8dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2063d36fe43a362a4edb53ecd1ec8dd9">&#9670;&#160;</a></span>setLowSpeedThreshold()</h2>
+<a id="aa553ed74efc9ca7d6e318741889f9b1a" name="aa553ed74efc9ca7d6e318741889f9b1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa553ed74efc9ca7d6e318741889f9b1a">&#9670;&#160;</a></span>setLowSpeedThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::PID::setLowSpeedThreshold </td>
+          <td class="memname">void PID::setLowSpeedThreshold </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>threshold</em></td><td>)</td>
@@ -432,14 +383,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 
 </div>
 </div>
-<a id="ae6422c741e9d6ce4ebd56b39a7a459d1" name="ae6422c741e9d6ce4ebd56b39a7a459d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6422c741e9d6ce4ebd56b39a7a459d1">&#9670;&#160;</a></span>setMaxIntegral()</h2>
+<a id="a729fb87839cb00866870133e7a46b3a9" name="a729fb87839cb00866870133e7a46b3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a729fb87839cb00866870133e7a46b3a9">&#9670;&#160;</a></span>setMaxIntegral()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::PID::setMaxIntegral </td>
+          <td class="memname">void PID::setMaxIntegral </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>max_integral</em></td><td>)</td>
@@ -458,14 +409,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 
 </div>
 </div>
-<a id="a42ac113c4c777df7e8aa7e697ec8b4cd" name="a42ac113c4c777df7e8aa7e697ec8b4cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42ac113c4c777df7e8aa7e697ec8b4cd">&#9670;&#160;</a></span>setTimeout()</h2>
+<a id="a36d2c7dd905139996310f6df82673aa4" name="a36d2c7dd905139996310f6df82673aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36d2c7dd905139996310f6df82673aa4">&#9670;&#160;</a></span>setTimeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void wpid::PID::setTimeout </td>
+          <td class="memname">void PID::setTimeout </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>timeout</em></td><td>)</td>
@@ -474,7 +425,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
       </table>
 </div><div class="memdoc">
 
-<p>Set the timeout to use for <a class="el" href="classwpid_1_1_p_i_d.html">PID</a> movement. If the timeout is exceeded, the system will stop regardless of the current error or speed. A value of -1 will disable timeouts. </p>
+<p>Set the timeout to use for <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> movement. If the timeout is exceeded, the system will stop regardless of the current error or speed. A value of -1 will disable timeouts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeout</td><td>in milliseconds </td></tr>
@@ -484,14 +435,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 
 </div>
 </div>
-<a id="a96f94b4baf1755c1f98f231c8fcbf920" name="a96f94b4baf1755c1f98f231c8fcbf920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96f94b4baf1755c1f98f231c8fcbf920">&#9670;&#160;</a></span>unfinished()</h2>
+<a id="a7ff502b66bc6efb46f27de4e15fdeff8" name="a7ff502b66bc6efb46f27de4e15fdeff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff502b66bc6efb46f27de4e15fdeff8">&#9670;&#160;</a></span>unfinished()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool wpid::PID::unfinished </td>
+          <td class="memname">bool PID::unfinished </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>error</em>, </td>
@@ -521,8 +472,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> (void)</td>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/austi/Documents/GitHub/WPID-Library/include/WPID/<a class="el" href="_p_i_d_8h_source.html">PID.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/WPID/<a class="el" href="_p_i_d_8h_source.html">PID.h</a></li>
+<li>src/WPID/<b>PID.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

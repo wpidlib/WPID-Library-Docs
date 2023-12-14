@@ -13,6 +13,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -21,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WPID Library<span id="projectnumber">&#160;4</span>
+   <div id="projectname">WPID Library<span id="projectnumber">&#160;5</span>
    </div>
   </td>
  </tr>
@@ -79,19 +81,25 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_chassis.html">Chassis</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will defualt to the behavior defined here, which for all methods is to do nothing.  <a href="classwpid_1_1_chassis.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this class will default to the behavior defined here, which for all methods is to do nothing.  <a href="classwpid_1_1_chassis.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_conversion.html">Conversion</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classwpid_1_1_conversion.html" title="A Conversion class used to convert distances to other units. Also used to standardize units to inches...">Conversion</a> class used to convert distances to other units. Also used to standardize units to inches in the internal calculation.  <a href="classwpid_1_1_conversion.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_h_drive.html">HDrive</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="classwpid_1_1_h_drive.html" title="An HDrive chassis class that inherits from the Tank class. Contains functions for strafing sideways,...">HDrive</a> chassis class that inherits from the <a class="el" href="classwpid_1_1_tank.html" title="An Tank chassis class that inherits from the Chassis virtual class. Contains functions for moving for...">Tank</a> class. Contains functions for strafing sideways, and moving diagonally along with all <a class="el" href="classwpid_1_1_tank.html" title="An Tank chassis class that inherits from the Chassis virtual class. Contains functions for moving for...">Tank</a> related motion. Utilizes <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> for all motion.  <a href="classwpid_1_1_h_drive.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_l_o_g.html">LOG</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A simple logger class that can be used to log messages to the console. Contains 3 different logging levels, DEBUG, INFO, and WARN.  <a href="classwpid_1_1_l_o_g.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_mechanism.html">Mechanism</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classwpid_1_1_mechanism.html" title="A Mechanism class that uses PID to control a motor group. Contains functions for moving to a relative...">Mechanism</a> class that uses <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> to control a motor group. Contains functions for moving to a relative or absolute angle both synchronously and asynchronously.  <a href="classwpid_1_1_mechanism.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_p_i_d.html">PID</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> class that stores constants and calculates the speed of a motor or motor group with respect to its current error and other internal factors.  <a href="classwpid_1_1_p_i_d.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classwpid_1_1_tank.html">Tank</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="classwpid_1_1_tank.html" title="An Tank chassis class that inherits from the Chassis virtual class. Contains functions for moving for...">Tank</a> chassis class that inherits from the <a class="el" href="classwpid_1_1_chassis.html" title="A pure virtual class to define the behavior and attributes of a chassis. Classes that extend this cla...">Chassis</a> virtual class. Contains functions for moving forwards and backwards, and on the spot turns. Utilizes <a class="el" href="classwpid_1_1_p_i_d.html" title="A PID class that stores constants and calculates the speed of a motor or motor group with respect to ...">PID</a> for all motion.  <a href="classwpid_1_1_tank.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>

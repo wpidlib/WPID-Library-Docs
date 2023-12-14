@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['tank_0',['tank',['../classwpid_1_1_tank.html',1,'wpid::Tank'],['../classwpid_1_1_tank.html#a2c37ea935a2d5e466f199731662237f1',1,'wpid::Tank::Tank()']]],
-  ['track_5fwidth_1',['track_width',['../classwpid_1_1_chassis.html#a27efb1e5e7cdecfe8e9861e216353366',1,'wpid::Chassis']]],
-  ['turn_2',['turn',['../classwpid_1_1_chassis.html#a37dd380a4ca4a932e40e3b80425232e1',1,'wpid::Chassis::turn()'],['../classwpid_1_1_h_drive.html#ab222585938b9ca0b797be2013a83b919',1,'wpid::HDrive::turn()'],['../classwpid_1_1_tank.html#aac6b61955ba3f1f6680b7f17ed1055cb',1,'wpid::Tank::turn()']]],
-  ['turnasync_3',['turnasync',['../classwpid_1_1_chassis.html#a8f075d50f6d62789c6983d544042d989',1,'wpid::Chassis::turnAsync()'],['../classwpid_1_1_h_drive.html#ace4eb4dfb5ca2dd5256b281141a89571',1,'wpid::HDrive::turnAsync()'],['../classwpid_1_1_tank.html#a62527777660eaf788fda29018d9c3fb5',1,'wpid::Tank::turnAsync()']]]
+  ['reset_0',['reset',['../classwpid_1_1_p_i_d.html#a73cdd43d93f2cfcf19b62f7e5022bb90',1,'wpid::PID']]],
+  ['resetposition_1',['resetposition',['../classwpid_1_1_chassis.html#a36efebbffdf45245ed4121ac9280a921',1,'wpid::Chassis::resetPosition()'],['../classwpid_1_1_h_drive.html#a44eb5c8ba5ec4f52481679d347de2cf6',1,'wpid::HDrive::resetPosition()'],['../classwpid_1_1_tank.html#aa5f9d06037b511121c3e9116e373f830',1,'wpid::Tank::resetPosition()'],['../classwpid_1_1_mechanism.html#adc106912a7a110db6047212b445e9c80',1,'wpid::Mechanism::resetPosition()']]]
 ];
