@@ -103,12 +103,11 @@ PID liftPID = new PID(0.7, 0.01, 0.5);
 
 Next you need to call the applicable setters to initialize PID tuning features. These setters initialize the error range, settling speed threshold, maximum speed the integral calculation can contribute to the final speed, and the elapsed time for system timeouts.
 
-```cpp
-void setErrorRange(int degrees);
-void setLowSpeedThreshold(int threshold);
-void setMaxIntegral(int max_integral);
-void setTimeout(int timeout);
-```
+- `void setErrorRange(int degrees);`
+- `void setLowSpeedThreshold(int threshold);`
+- `void setMaxIntegral(int max_integral);`
+- `void setTimeout(int timeout);`
+
 > PID feature setters
 
 ### Error Range

@@ -63,7 +63,7 @@ fourbar.setPID(liftPID);
 
 This can go inside an initialize function as the PID object does not need to be globally accessible.
 
-> Check out our [PID tutorial](https://wpidlib.github.io/WPID-Library-Docs/tutorials/PID/pid.html) for more information about the PID class and it's attributes
+> Check out our [PID tutorial](https://wpidlib.github.io/WPID-Library-Docs/tutorials/PID/pid.html) for more information about the PID class and its attributes
 
 We now set a PID object with some constants to the fourbar and are ready to use the fourbar in our autonomous and driver control functions.
 
