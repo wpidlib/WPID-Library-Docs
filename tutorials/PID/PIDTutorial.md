@@ -1,6 +1,6 @@
 # PID Implementation
 
-Our PID implementation in the WPID library uses a basic Proportional-Integral-Derivative (PID) algorithm structure with some add-on features for more efficient tuning. This tutorial covers the basics of PID and the WPID-specific implementation of the algorithm.
+Our PID implementation in the WPID library uses a basic Proportional-Integral-Derivative (PID) algorithm structure with some add-on utilities and tuning features that allow for more efficient motion. This tutorial covers the basics of PID and the WPID-specific implementation of the algorithm.
 
 # What is PID?
 
@@ -60,7 +60,7 @@ float speed = error*kp + integral*ki + derivative*kd;
 
 While PID serves as an adaptable and efficient algorithm for robotic motion, the algorithm has several blind spots that can be addressed with supplemental utilities. The first implementation issue with PID occurs at the intersection of the Kp and Ki constants. When continuously integrating with Ki throughout a PID-controlled motion, the integral portion of the algorithm increases to the point where overshoot is difficult to avoid. In order to eliminate overshoot from PID motions, this continuous accumulation of steady-state error needs to be limited to specific periods of the motion.
 
-The integral clamping and max-integral limit features within the WPID library address... 
+The integral clamping and max integral limit features within the WPID library address the overshoot issue by limiting the window during which integral can accumulate. Integral clamping ensures that integral does not accumulate if it would cause the mechanism to move at a speed that is higher than the input parameter max_speed. Max integral keeps the integral at or below a specified target value. Integral clamping is a passive utility that is active during every PID motion while max integral is a tuning feature that allows for further customization of the integral behavior. Max integral is described in more detail in the next section of the tutorial.
 
 ```cpp
 float integral = prev_integral + (error * (delay_time/(float)1000));
@@ -76,9 +76,9 @@ prev_integral = integral;
 ```
 > Integral clamping and limiting in PID.cpp
 
-Another issue with PID is the lack of a filtration feature for derivative noise. The derivative portion of PID is subject to sharp fluctuations during motion that make this piece of the algorithm difficult to implement smoothly. Finally, the PID algorithm has no feature to support smooth transitions into and out of motions. PID control supports smooth motion in the intermediate stage between the start and end of the motion, but supplemental utilities are needed to prevent sudden starting and stopping.
+Another issue with PID is the lack of a filtration feature for derivative noise. The derivative portion of PID is subject to sharp fluctuations during motion that make this piece of the algorithm difficult to implement smoothly.
 
-The low-pass derivative filtration feature within the WPI library addresses...
+The low-pass derivative filtration feature within the WPID library addresses the fluctuation in derivative by weighting each new derivative reading lower than the summed total of previous readings (previous_estimate). The weighting factor is determined by the value of *a*, where a > 0.5 in order to preserve the influence of the previous_estimate. The weight of the newest derivative reading (error - prev_error) is adjusted by a factor of (1-a). The weight of the combined total of previous readings is adjusted by a factor of a. Thus, readings that are significantly far from the average derivative reading have less of a drastic impact on the derivative element of PID, resulting in an overall smoother trend for derivative behavior.
 
 ```cpp
 float a = .7;
@@ -101,15 +101,17 @@ PID liftPID = new PID(0.7, 0.01, 0.5);
 ```
 > PID constructor call example
 
-Next you need to call the applicable setters to initialize values used in the additional PID features. These setters initialize the error range, delay time between new PID calculations, elapsed time for system timeouts, settling (low) speed threshold, and the maximum speed the Ki constant can contribute to the final speed calculation.
+Next you need to call the applicable setters to initialize PID tuning features. These setters initialize the error range, settling speed threshold, maximum speed the integral calculation can contribute to the final speed, and the elapsed time for system timeouts.
 
 ```cpp
 void setErrorRange(int degrees);
-void setTimeout(int timeout);
 void setLowSpeedThreshold(int threshold);
 void setMaxIntegral(int max_integral);
+void setTimeout(int timeout);
 ```
-> PID variable setters
+> PID feature setters
+
+### Error Range
 
 The error range value determines the number of V5 motor degrees +/- away from the target that are acceptable as the final error. In an example case, the liftPID error range is initialized to 5 degrees. If the motor needs to travel 180 degrees, the motor may end its motion after traveling anywhere in the range of {175-185} degrees. The final error after this motion will be anywhere between {-5-5} degrees. The error range default value is 2 degrees.
 
@@ -118,6 +120,32 @@ liftPID.setErrorRange(5);
 ```
 > Error range setter call
 
+Setting an error range is important when considering the settling time of a PID motion. A lower error range will cause each PID motion to take longer to complete, but also allows for a higher degree of position accuracy. A higher error range will shorten the settling time at the cost of position accuracy.
+
+### Low Speed Threshold
+
+The low speed threshold value determines the highest speed that the mechanism may have at the *end* of a motion. When enabled, this feature blocks the mechanism from exiting the PID loop until its position is within the error range AND its current speed is less than the low speed threshold value. In an example case, the liftPID low speed threshold value is set to 7. If the motor needs to travel 180 degrees, the motion will not be finished until the error is between {-5-5} degrees AND the motor speed is under 7. Even if the motor is within the error range, the motor will continue to move until its speed reads below 7. The default low speed threshold value is -1; this feature is disabled in the PID calculations until it is set.
+
+```cpp
+liftPID.setLowSpeedThreshold(7);
+```
+> Low speed threshold setter call
+
+Setting a low speed threshold also influences the settling time of PID motion. Setting the low speed threshold closer to 0 will increase the settling time while smoothing out the deceleration of the mechanism. Setting the low speed threshold to a higher value will decrease the settling time but also risks a more abrupt transition to the stopping state. Leaving this feature disabled will cause the mechanism to immediately stop once it has hit the error range, which can induce 'choppy' motion. Without a low speed threshold, the different motor_groups in a chassis (left, right, center, etc.) may also stop at slightly different times, leading to overshoot on only one side (or motor_group). This behavior is possible because of thread desynchronization, but is dampened with the introduction of a properly-tuned low speed threshold.
+
+### Max Integral
+
+The max integral value determines the maximum allowed value for the integral portion of the PID calculations. During a PID-controlled motion, the current integral calculation is lowered to the max integral value if it exceeds the set limit. In an example case, the liftPID max integral value is set to 15. If the motor needs to travel 180 degrees, the integral*Ki value will be limited to a range of {-15-15}. The default max integral value is set to the top speed of the V5 motors (100), meaning that the integral portion of PID remains unbounded until this value is changed.
+
+```cpp
+liftPID.setMaxIntegral(15);
+```
+> Max integral setter call
+
+The max integral tuning feature is useful in curbing overshoot during PID motion. Because the integral portion of PID is calculated using the sum of errors, high errors can lead to a disproportionally large integral contribution to the final speed calculation, especially with a high Ki constant. Together with the integral clamping utility, max integral limits this build-up of integral in order to allow high Ki constants to be used without as much risk of overshoot. Disabling this feature limits your ability to use higher Ki constants if you do not want system overshoot.
+
+### Timeout
+
 The timeout value determines the amount of time that passes before the system stops running PID. In an example case, the liftPID timeout is set to 3000ms. If the motor needs to travel 180 degrees but has taken longer than 3 seconds to run, the PID will stop running regardless of the error or speed at the 3 second mark. The default timeout value is -1; timeouts will be automatically disabled unless manually set.
 
 ```cpp
@@ -125,4 +153,4 @@ liftPID.setTimeout(3000);
 ```
 > Timeout setter call
 
-The low speed threshold value...
+A timeout is useful as a hard limit that acts as a backup stopping criteria if a PID motion is taking too long. However, it is important to note that a timeout will override all other PID tuning features in order to stop the motion. Because it has the potential to disrupt the PID algorithm, a timeout should only be implemented in the last step of the tuning process. The timeout value should be employed as an external failsafe.
