@@ -154,3 +154,8 @@ liftPID.setTimeout(3000);
 > Timeout setter call
 
 A timeout is useful as a hard limit that acts as a backup stopping criteria if a PID motion is taking too long. However, it is important to note that a timeout will override all other PID tuning features in order to stop the motion. Because it has the potential to disrupt the PID algorithm, a timeout should only be implemented in the last step of the tuning process. The timeout value should be employed as an external failsafe.
+
+---
+# What PID Constant and Tuning Feature Values Are Best?
+
+The best PID constant (Kp, Ki, Kd) and tuning feature values vary from application to application, but a basic guide for where to start with PID tuning can be found in the PID tuning tutorial.
