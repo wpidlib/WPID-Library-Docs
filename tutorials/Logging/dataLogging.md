@@ -53,6 +53,7 @@ So if you have 2 motor groups and 3 driving instructions, but also 1 mechanism a
 ![Files On SD Card](filesOnSDCard.png)
 
 You are then going to want to select all of these files and copy them to the file path WPID-Library/python_resources/VexLogs
+> Note: If this folder does not exist, right click and add a new folder called "VexLogs," the python script will not find the files if the folder is not named VexLogs
 > Note: Make sure to store or remove any old files already existing in this file path. 
 
 ![Files In Library 1](fileInLibrary1.png)

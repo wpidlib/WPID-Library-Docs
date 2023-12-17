@@ -14,7 +14,7 @@ In closed-loop control, the algorithm takes input from the initial set of parame
 
 # PID VEX Applications
 
-PID control is a type of closed-loop control system. In the VEX setting, the algorithm takes in a target distance parameter as its set-point or goal state. The system output comes from a sensor on the robot that determines the robot’s current distance from its set-point. This sensor can be an external camera, ultrasonic range finder, line tracker, or encoder (internal or external). In th WPID implementation, the chosen sensor for system output is the internal encoder system on the VEX V5 motors. The encoder sensor responds to motion and returns the distance that the motor has traveled. This traveled-distance is subtracted from the set-point-distance to determine the steady-state error, referred to as error in the figure below. Then, the P, I, and D constants combine with the steady-state error to calculate the speed of the robot and the loop repeats with the new encoder output.
+PID control is a type of closed-loop control system. In the VEX setting, the algorithm takes in a target distance parameter as its set-point or goal state. The system output comes from a sensor on the robot that determines the robot’s current distance from its set-point. This sensor can be an external camera, ultrasonic range finder, line tracker, or encoder (internal or external). In the WPID implementation, the chosen sensor for system output is the internal encoder system on the VEX V5 motors. The encoder sensor responds to motion and returns the distance that the motor has traveled. This traveled-distance is subtracted from the set-point-distance to determine the steady-state error, referred to as error in the figure below. Then, the P, I, and D constants combine with the steady-state error to calculate the speed of the robot and the loop repeats with the new encoder output.
 
 ![PID Control Diagram](PIDFigure1.png)
 > Figure of PID closed-loop control
@@ -157,4 +157,4 @@ A timeout is useful as a hard limit that acts as a backup stopping criteria if a
 ---
 # What PID Constant and Tuning Feature Values Are Best?
 
-The best PID constant (Kp, Ki, Kd) and tuning feature values vary from application to application, but a basic guide for where to start with PID tuning can be found in the PID tuning tutorial.
+The best PID constant (Kp, Ki, Kd) and tuning feature values vary from application to application, but a basic guide for where to start with PID tuning can be found in the [PID tuning tutorial](../Tuning/tuning.html).

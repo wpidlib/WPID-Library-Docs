@@ -4,7 +4,7 @@ The chassis class in the WPID library defines a chassis as the drivetrain of a r
 
 # Chassis Hierarchy
 
-The entire chassis hierarchy is built off of the mechanism class, where each separate group of motors in the chassis is its own mechanism. This means that the mechanism function `spinToTarget(void* args)` internally implements PID for any chassis motion. Before continuing with this tutorial, read through the mechanism tutorial to get a better idea of how mechanism functions operate.
+The entire chassis hierarchy is built off of the mechanism class, where each separate group of motors in the chassis is its own mechanism. This means that the mechanism function `spinToTarget(void* args)` internally implements PID for any chassis motion. Before continuing with this tutorial, read through the [mechanism tutorial](../Mechanism/mechanism.html) to get a better idea of how mechanism functions operate.
 
 WPID's chassis hierarchy includes one abstract class Chassis, its subclass Tank, and a Tank subclass HDrive. The abstract Chassis.h class contains all function headers and data fields that are shared between the chassis types we consider. The Tank.h/Tank.cpp classes declare and implement each of the functions from the Chassis.h class. The Tank class also inherits all of the data fields contained in Chassis.h. The HDrive.h/HDrive.cpp classes declare and implement each of the functions from the Chassis.h class plus new functions that relate to the extra center motor_group. Likewise, the HDrive class inherits all of the data field contained in Chassis.h but adds new data fields that relate to the center motor_group.
 
@@ -27,7 +27,7 @@ extern Tank chassis;
 ```
 > Instantiation example of a Tank chassis in init.h
 
-Next, in your init.cpp file, call the Tank constructor and pass it the appropriate arguments to initialize the Tank instance. The first parameter for the Tank constructor is the `track_width` of your robot (distance between the centers/contact patches of the front two wheels). The next parameter is the `wheel_radius` of the chassis wheels. The next two parameters are of vex::motor_group type, representing the `left` and `right` side of the robot. It is possible to have a motor_group consist of only one motor, so 2wd and 4wd are both possible using the WPID Tank class. Remember to initialize each motor individually and add it to the motor_group before calling the Tank constructor. The last parameter is the `drive_gear_ratio`. If you do not know what a gear ratio is, check out the mechanism tutorial for more resources.
+Next, in your init.cpp file, call the Tank constructor and pass it the appropriate arguments to initialize the Tank instance. The first parameter for the Tank constructor is the `track_width` of your robot (distance between the centers/contact patches of the front two wheels). The next parameter is the `wheel_radius` of the chassis wheels. The next two parameters are of vex::motor_group type, representing the `left` and `right` side of the robot. It is possible to have a motor_group consist of only one motor, so 2wd and 4wd are both possible using the WPID Tank class. Remember to initialize each motor individually and add it to the motor_group before calling the Tank constructor. The last parameter is the `drive_gear_ratio`. If you do not know what a gear ratio is, check out the [mechanism tutorial](../Mechanism/mechanism.html) for more resources.
 
 ```cpp
 Tank(float track_width, float wheel_radius, vex::motor_group left, vex::motor_group right, float drive_gear_ratio);
@@ -100,7 +100,7 @@ The initialization stage of the chassis also involves calls to specific setters 
 
 Apart from PID, offset, and measurement unit setters, the rest of the setter functions make calls to the specified mechanism functions for all motor_groups in the chassis. These functions are covered further in the Mechanism tutorial. 
 
-The PID setter functions take PID objects as arguments and set the corresponding chassis attribute. These attributes are then used to swap the active PID object in the body of a movement function (described in the next section). With a Tank chassis, you have access to `pidStraight` and `pidTurn`. Using an HDrive chassis adds `pidStrafe` as a third PID attribute. IMPORTANT: YOU HAVE TO SET YOUR PID OBJECTS IN ORDER FOR THE ROBOT TO DISPLAY ANY KIND OF MOTION. If you call a movement function without setting the corresponding chassis PID object, the robot will not move.
+The PID setter functions take PID objects as arguments and set the corresponding chassis attribute. These attributes are then used to swap the active PID object in the body of a movement function (described in the next section). With a Tank chassis, you have access to `pidStraight` and `pidTurn`. Using an HDrive chassis adds `pidStrafe` as a third PID attribute. **IMPORTANT: YOU HAVE TO SET YOUR PID OBJECTS IN ORDER FOR THE ROBOT TO DISPLAY ANY KIND OF MOTION.** If you call a movement function without setting the corresponding chassis PID object, the robot will not move.
 
 ```cpp
 //Setting pidStraight
@@ -117,7 +117,7 @@ chassis.setStrafePID(strafe);
 ```
 > Setting PID objects for an HDrive chassis
 
-Normally, the tuning features corresponding to each PID object are also set in this part of the init.cpp file. Both the What is PID? tutorial and the PID Tuning tutorial contain more information about this process.
+Normally, the tuning features corresponding to each PID object are also set in this part of the init.cpp file. Both the [What is PID?](../PID/pid.html) tutorial and the [PID Tuning](../Tuning/tuning.html) tutorial contain more information about this process.
 
 The offset setter function is used to assign the distance (in your preferred measurement system) and number of degrees passively added to your input for each corresponding movement function. This function is meant to 'offset' any mechanical, environmental, or other external factors that may cause typical measurements to be consistently inaccurate. For example, if your robot *consistently* is 3° off of the `target_angle` you input for turns, you would set the `turn_offset` to 3. The reason for offset is to remove confusion when inputting target distances or angles. If your robot's measure of 90° is actually 87°, it is easier to set an offset of 3° and input 90° when you want the robot to turn 90°. Without offset, you would have to input 87° every time you wanted the robot to turn 90° and would have to input 42° every time you wanted the robot to turn 45°. This field should only be used to correct *consistent* margins of error. The default value for all offsets are 0.
 
@@ -139,7 +139,7 @@ Now that your chassis has been properly instantiated and initialized, you are re
 ---
 # How Does WPID Move Your Chassis
 
-Each chassis type comes with several different types of motion that are implemented in their respective C++ files. This tutorial will cover basic non-asynchronous movement options including moving straight (forwards and backwards), turning, strafing (for HDrive), and diagonal motion (for HDrive). The asynchronous movement options are explained in the Asynchronous Movement tutorial. 
+Each chassis type comes with several different types of motion that are implemented in their respective C++ files. This tutorial will cover basic non-asynchronous movement options including moving straight (forwards and backwards), turning, strafing (for HDrive), and diagonal motion (for HDrive). The asynchronous movement options are explained in the [Asynchronous Movement](../Async/async.html) tutorial. 
 
 The movement options shared between Tank and HDrive chassis include straight and turn motions. The straight motion option is used to cover a `distance` (in your preferred measurement units) at a specified `max_speed`. The turn movement option is used to rotate about the center of the chassis to reach a `target_angle` in degrees at a specified `max_speed`.
 
