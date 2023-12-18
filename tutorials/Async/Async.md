@@ -4,8 +4,8 @@ The WPID library utilizes threads to perform motion on mechanisms at the same ti
 
 ## Using Async Movement with the Mechanism class
 
-Doing asyncronous motion with WPID is very easy and only requires the use of two functions. The first is an asynchronous variant of either the `moveRelative` or `moveAbsolute` functions aptly named `moveRelativeAsync` and `moveAbsoluteAsync`.
-The second function is a blocking function that waits until the movement has settled, also conviently named `waitUntilSettled`.
+Doing asynchronous motion with WPID is very easy and only requires the use of two functions. The first is an asynchronous variant of either the `moveRelative` or `moveAbsolute` functions aptly named `moveRelativeAsync` and `moveAbsoluteAsync`.
+The second function is a blocking function that waits until the movement has settled, also conveniently named `waitUntilSettled`.
 
 
 
@@ -22,7 +22,7 @@ The first call `fourbar.moveRelativeAsync(90, 50)` moves the fourbar up by 90 de
 
 ## Using Async Movement with the Chassis classes
 
-Async motion with the chassis is just as easy as the mechanisms, since mechanisms are utilized in the chassis. The difference is the syncrhonous chassis movement functions have asynchronous counterparts. 
+Async motion with the chassis is just as easy as the mechanisms, since mechanisms are utilized in the chassis. The difference is the synchronous chassis movement functions have asynchronous counterparts. 
 
 For the Tank class we have:
 
@@ -45,7 +45,7 @@ hdrive.waitUntilSettled();
 // stuff down here is blocked
 ```
 
-Just like the mechanism, each call to an async function runs the movement in the background, allowing the program to continue until the `waitUntilSettled` funciton is called. It waits for all motors connected to the drive train to finish moving and then the program continues. 
+Just like the mechanism, each call to an async function runs the movement in the background, allowing the program to continue until the `waitUntilSettled` function is called. It waits for all motors connected to the drive train to finish moving and then the program continues. 
 
 ## Using Both Chassis and Mechanism Together
 
