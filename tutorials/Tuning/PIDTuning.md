@@ -64,7 +64,7 @@ straight.setLowSpeedThreshold(50);
 ```
 > Low speed threshold too high for straight motion
 
-[INSERT GIF]
+![Screenshot of WPID v0.1.0](rightsidestopfirst.gif)
 
 After tuning the stopping criteria features, you should determine whether you want to use the max integral feature. Max integral supports our library's built-in integral clamping to curb the integral build-up during PID. While not technically disabled outright, the default value for max integral is equivalent to the max speed for V5 motors. This means that there is initially no limit on the maximum integral value. As you decrease the max integral value, the integral element of PID has less overall weight on the PID calculations. From our experience tuning, an effective max integral value generally falls in the range of {5-20}. A max integral value that is too low will start to decrease the effectiveness of the integral element. Below is an example of the PID straight object with a max integral value that is *too low* for our tuning route `chassis.straight(24, 50)`.
 
@@ -82,7 +82,7 @@ straight.setTimeout(1000);
 ```
 > Timeout too low for straight motion
 
-[INSERT GIF]
+![Gif of chassis timing out](timeout.gif)
 
 ---
 ## Conclusion
