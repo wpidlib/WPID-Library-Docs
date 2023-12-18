@@ -24,7 +24,7 @@ PID control is a type of closed-loop control system. In the VEX setting, the alg
 
 The PID controller operates using a combination of three constants: the proportional constant Kp, the integral constant Ki, and the derivative constant Kd. 
 
-The Kp constant proportionally increases the robot’s response-speed based on its current error. With a higher error, the Kp constant will yield a more immediate response, however; a high Kp can cause overshoot, where the robot hits its set-point and then continues moving.
+The Kp constant proportionally increases the robot’s response-speed based on its current error to move the robot close to its set-point. With a higher error, the Kp constant will yield a more immediate response, however; a high Kp can cause overshoot, where the robot hits its set-point and then continues moving. Using only the Kp constant will generally result in oscillations about the set-point and a non-trivial steady-state error (final error) between the robot's position and its intended set-point.
 
 ```cpp
 float error;
@@ -32,7 +32,7 @@ float error;
 ```
 > Proportional element of PID control
 
-The Ki constant multiplies with the summation of error to move the robot incrementally towards its set-point. Ki adds more precision to the system, so that once Kp brings the robot close to its set-point, the Ki integration can cover the remaining distance. The combination of Kp and Ki is used in the PI control configuration of PID to quickly (Kp) and precisely (Ki) reach a set-point.
+The Ki constant multiplies with the summation of error to move the robot the rest of the way to its set-point. Ki adds more precision to the system, so that once Kp brings the robot close to its set-point, the Ki integration can cover the remaining distance. The combination of Kp and Ki is used in the PI control configuration of PID to quickly (Kp) and precisely (Ki) reach a set-point. This configuration still lacks a way to efficiently counteract overshoot.
 
 ```cpp
 float integral = prev_integral + (error * (delay_time/(float)1000));
@@ -40,7 +40,7 @@ float integral = prev_integral + (error * (delay_time/(float)1000));
 ```
 > Integral element of PID control
 
-The Kd constant multiplies with the difference of error to decrease overshoot. The combination of Kp and Kd is used in the PD control configuration of PID to quickly (Kp) reach a set-point while curbing overshoot (Kd). 
+The Kd constant multiplies with the difference of error to decrease overshoot from the PI configuration. The combination of Kp and Kd is used in the PD control configuration of PID to quickly (Kp) reach a set-point while curbing overshoot (Kd). 
 
 ```cpp
 float derivative = (error - prev_error) / (delay_time/(float)1000);
