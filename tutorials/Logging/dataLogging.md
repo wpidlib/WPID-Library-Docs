@@ -19,7 +19,7 @@ LOG(INFO) << " err: " << error << " spd: " << speed << " P: " << error*kp << " I
 There are three LOG() levels, WARN, INFO and DEBUG in that order. Selecting DEBUG will also include the INFO and WARN descriptions, while selecting INFO will also include the WARN descriptions.
 
 #### WARN
-The WARN log level indicates that something the program was not expecting has occurred, such as a problem or a process that was disturbed in an unexpected way. The WARN log level does not mean that the program failed during runtime, an the code should still be running after a WARN was used.
+The WARN log level indicates that something the program was not expecting has occurred, such as a problem or a process that was disturbed in an unexpected way. The WARN log level does not mean that the program failed during runtime, and the code should still be running after a WARN was used.
 
 #### INFO
 This is considered the 'standard' log level indicating that an event occurred, the application transferred to another state, etc. Information that is logged using the INFO log level should be one hundred percent informative and ignoring the info logs regularly should not result in important information getting missed.
@@ -33,10 +33,10 @@ The DEBUG level is used for information that may be needed during the troublesho
 To access and use the built in library terminal logger, please include the wpid.h file or the logger.h file to the file you wish to use the Logging function from.
 Once that is done, you can call the logging function using the format below:
 ```c++
-LOG(LOGLEVEL) << data << optionalData << moreOptionalData
+LOG(LOGLEVEL) << data << optionalData << moreOptionalData;
 ```
 where LOGLEVEL is either WARN, INFO or DEBUG and any/all data.
-Not adding any data to be logged out will just result in the log level and timestamp being outputted.
+Not adding any data to be logged out will just result in the log level and timestamp being output.
 Adding multiple variables or strings to the data will result in all data being logged on one line as one string.
 
 ---
