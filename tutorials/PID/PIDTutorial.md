@@ -24,7 +24,7 @@ PID control is a type of closed-loop control system. In the VEX setting, the alg
 
 The PID controller operates using a combination of three constants: the proportional constant Kp, the integral constant Ki, and the derivative constant Kd. 
 
-The Kp constant proportionally increases the robot’s response-speed based on steady-state error. With a higher steady-state error, the Kp constant will yield a more immediate response, however; a high Kp can cause overshoot, where the robot hits its set-point and then continues moving.
+The Kp constant proportionally increases the robot’s response-speed based on its current error. With a higher error, the Kp constant will yield a more immediate response, however; a high Kp can cause overshoot, where the robot hits its set-point and then continues moving.
 
 ```cpp
 float error;
@@ -32,7 +32,7 @@ float error;
 ```
 > Proportional element of PID control
 
-The Ki constant multiplies with the summation of steady-state error to move the robot incrementally towards its set-point. Ki adds more precision to the system, so that once Kp brings the robot close to its set-point, the Ki integration can cover the remaining distance. The combination of Kp and Ki is used in the PI control configuration of PID to quickly (Kp) and precisely (Ki) reach a set-point.
+The Ki constant multiplies with the summation of error to move the robot incrementally towards its set-point. Ki adds more precision to the system, so that once Kp brings the robot close to its set-point, the Ki integration can cover the remaining distance. The combination of Kp and Ki is used in the PI control configuration of PID to quickly (Kp) and precisely (Ki) reach a set-point.
 
 ```cpp
 float integral = prev_integral + (error * (delay_time/(float)1000));
@@ -40,7 +40,7 @@ float integral = prev_integral + (error * (delay_time/(float)1000));
 ```
 > Integral element of PID control
 
-The Kd constant multiplies with the difference of steady-state error to decrease overshoot. The combination of Kp and Kd is used in the PD control configuration of PID to quickly (Kp) reach a set-point while curbing overshoot (Kd). 
+The Kd constant multiplies with the difference of error to decrease overshoot. The combination of Kp and Kd is used in the PD control configuration of PID to quickly (Kp) reach a set-point while curbing overshoot (Kd). 
 
 ```cpp
 float derivative = (error - prev_error) / (delay_time/(float)1000);
@@ -58,7 +58,7 @@ float speed = error*kp + integral*ki + derivative*kd;
 ---
 # Why Does PID Need Additional Utilities?
 
-While PID serves as an adaptable and efficient algorithm for robotic motion, the algorithm has several blind spots that can be addressed with supplemental utilities. The first implementation issue with PID occurs at the intersection of the Kp and Ki constants. When continuously integrating with Ki throughout a PID-controlled motion, the integral portion of the algorithm increases to the point where overshoot is difficult to avoid. In order to eliminate overshoot from PID motions, this continuous accumulation of steady-state error needs to be limited to specific periods of the motion.
+While PID serves as an adaptable and efficient algorithm for robotic motion, the algorithm has several blind spots that can be addressed with supplemental utilities. The first implementation issue with PID occurs at the intersection of the Kp and Ki constants. When continuously integrating with Ki throughout a PID-controlled motion, the integral portion of the algorithm increases to the point where overshoot is difficult to avoid. In order to eliminate overshoot from PID motions, this continuous accumulation of error needs to be limited to specific periods of the motion.
 
 The integral clamping and max integral limit features within the WPID library address the overshoot issue by limiting the window during which integral can accumulate. Integral clamping ensures that integral does not accumulate if it would cause the mechanism to move at a speed that is higher than the input parameter `max_speed`. Max integral keeps the integral at or below a specified target value. Integral clamping is a passive utility that is active during every PID motion while max integral is a tuning feature that allows for further customization of the integral behavior. Max integral is described in more detail in the next section of the tutorial.
 
@@ -78,7 +78,7 @@ prev_integral = integral;
 
 Another issue with PID is the lack of a filtration feature for derivative noise. The derivative portion of PID is subject to sharp fluctuations during motion that make this piece of the algorithm difficult to implement smoothly.
 
-The low-pass derivative filtration feature within the WPID library addresses the fluctuation in derivative by weighting each new derivative reading lower than the summed total of previous readings (previous_estimate). The weighting factor is determined by the value of `a`, where `a > 0.5` in order to preserve the influence of the previous_estimate. The weight of the newest derivative reading `(error - prev_error)` is adjusted by a factor of `(1-a)`. The weight of the combined total of previous readings is adjusted by a factor of a. Thus, readings that are significantly far from the average derivative reading have less of a drastic impact on the derivative element of PID, resulting in an overall smoother trend for derivative behavior.
+The low-pass derivative filtration feature within the WPID library addresses the fluctuation in derivative by weighting each new derivative reading lower than the previous reading (previous_estimate). The weighting factor is determined by the value of `a`, where `a > 0.5` in order to preserve the influence of the previous_estimate. The weight of the newest derivative reading `(error - prev_error)` is adjusted by a factor of `(1-a)`. The weight of the combined total of previous readings is adjusted by a factor of a. Thus, readings that are significantly far from the average derivative reading have less of a drastic impact on the derivative element of PID, resulting in an overall smoother trend for derivative behavior.
 
 ```cpp
 float a = .7;
