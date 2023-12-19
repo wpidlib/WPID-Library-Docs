@@ -4,7 +4,7 @@ The chassis class in the WPID library defines a chassis as the drivetrain of a r
 
 # Chassis Hierarchy
 
-The entire chassis hierarchy is built off of the mechanism class, where each separate group of motors in the chassis is its own mechanism. This means that the mechanism function `spinToTarget(void* args)` internally implements PID for any chassis motion. Before continuing with this tutorial, read through the [mechanism tutorial](../Mechanism/mechanism.html) to get a better idea of how mechanism functions operate.
+The entire chassis hierarchy is built off of the Mechanism class, where each separate group of motors in the chassis is its own Mechanism. This means that the Mechanism function `spinToTarget(void* args)` internally implements PID for any chassis motion. Before continuing with this tutorial, read through the [Mechanism tutorial](../Mechanism/Mechanism.html) to get a better idea of how Mechanism functions operate.
 
 WPID's chassis hierarchy includes one abstract class Chassis, its subclass Tank, and a Tank subclass HDrive. The abstract Chassis.h class contains all function headers and data fields that are shared between the chassis types we consider. The Tank.h/Tank.cpp classes declare and implement each of the functions from the Chassis.h class. The Tank class also inherits all of the data fields contained in Chassis.h. The HDrive.h/HDrive.cpp classes declare and implement each of the functions from the Chassis.h class plus new functions that relate to the extra center motor_group. Likewise, the HDrive class inherits all of the data field contained in Chassis.h but adds new data fields that relate to the center motor_group.
 
@@ -27,7 +27,7 @@ extern Tank chassis;
 ```
 > Instantiation example of a Tank chassis in init.h
 
-Next, in your init.cpp file, call the Tank constructor and pass it the appropriate arguments to initialize the Tank instance. The first parameter for the Tank constructor is the `track_width` of your robot (distance between the centers/contact patches of the front two wheels). The next parameter is the `wheel_radius` of the chassis wheels. The next two parameters are of vex::motor_group type, representing the `left` and `right` side of the robot. It is possible to have a motor_group consist of only one motor, so 2wd and 4wd are both possible using the WPID Tank class. Remember to initialize each motor individually and add it to the motor_group before calling the Tank constructor. The last parameter is the `drive_gear_ratio`. If you do not know what a gear ratio is, check out the [mechanism tutorial](../Mechanism/mechanism.html) for more resources.
+Next, in your init.cpp file, call the Tank constructor and pass it the appropriate arguments to initialize the Tank instance. The first parameter for the Tank constructor is the `track_width` of your robot (distance between the centers/contact patches of the front two wheels). The next parameter is the `wheel_radius` of the chassis wheels. The next two parameters are of vex::motor_group type, representing the `left` and `right` side of the robot. It is possible to have a motor_group consist of only one motor, so 2wd and 4wd are both possible using the WPID Tank class. Remember to initialize each motor individually and add it to the motor_group before calling the Tank constructor. The last parameter is the `drive_gear_ratio`. If you do not know what a gear ratio is, check out the [Mechanism tutorial](../Mechanism/Mechanism.html) for more resources.
 
 ```cpp
 Tank(float track_width, float wheel_radius, vex::motor_group left, vex::motor_group right, float drive_gear_ratio);
@@ -98,7 +98,7 @@ HDrive chassis = HDrive(12.5, 1.625, 2, leftGroup, rightGroup, centerGroup, 1);
 
 The initialization stage of the chassis also involves calls to specific setters that define additional attributes including brake type, offset, max acceleration, and your preferred measurement units. Note that only the PID objects are required to be set here; everything else is optional.
 
-Apart from PID, offset, and measurement unit setters, the rest of the setter functions make calls to the specified mechanism functions for all motor_groups in the chassis. These functions are covered further in the Mechanism tutorial. 
+Apart from PID, offset, and measurement unit setters, the rest of the setter functions make calls to the specified Mechanism functions for all motor_groups in the chassis. These functions are covered further in the Mechanism tutorial. 
 
 The PID setter functions take PID objects as arguments and set the corresponding chassis attribute. These attributes are then used to swap the active PID object in the body of a movement function (described in the next section). With a Tank chassis, you have access to `pidStraight` and `pidTurn`. Using an HDrive chassis adds `pidStrafe` as a third PID attribute. **IMPORTANT: YOU HAVE TO SET YOUR PID OBJECTS IN ORDER FOR THE ROBOT TO DISPLAY ANY KIND OF MOTION.** If you call a movement function without setting the corresponding chassis PID object, the robot will not move.
 
@@ -145,7 +145,7 @@ The movement options shared between Tank and HDrive chassis include straight and
 
 ### Straight Movement
 
-The WPID straight function implementation starts by translating your given `distance` input to our library's standard system of measurement: inches. After this, the function computes the equivalent distance in motor degrees. The function does this so that the mechanism `spinToTarget(void* args)` function can easily compare the target distance to the readings from the V5 motor internal encoders, which register motor degrees traveled. 
+The WPID straight function implementation starts by translating your given `distance` input to our library's standard system of measurement: inches. After this, the function computes the equivalent distance in motor degrees. The function does this so that the Mechanism `spinToTarget(void* args)` function can easily compare the target distance to the readings from the V5 motor internal encoders, which register motor degrees traveled. 
 
 ```cpp
     distance = Conversion::standardize(distance, this->measure_units);
@@ -153,7 +153,7 @@ The WPID straight function implementation starts by translating your given `dist
 ```
 > Distance computation in straight function
 
-Next, the straight function assigns the correct PID object, `pidStraight`, to each motor_group, since PID objects assigned to each mechanism change between motions (pidStraight vs. pidTurn). The function repeats this step with offset. Finally, the straight function passes the target distances and max speeds for each side to the Tank `spinToTarget(float left_target, float right_target, int l_max_spd, int r_max_spd)` function. This function is different from the mechanism spinToTarget function; its purpose is to trigger the mechanism movement functions to individually move each side of the robot. From this point forward, the mechanism class takes over with its own movement functions, which are explained in the Mechanism tutorial.
+Next, the straight function assigns the correct PID object, `pidStraight`, to each motor_group, since PID objects assigned to each Mechanism change between motions (pidStraight vs. pidTurn). The function repeats this step with offset. Finally, the straight function passes the target distances and max speeds for each side to the Tank `spinToTarget(float left_target, float right_target, int l_max_spd, int r_max_spd)` function. This function's purpose is to trigger the Mechanism movement functions to individually move each side of the robot. From this point forward, the Mechanism class takes over with its own movement functions, which are explained in the Mechanism tutorial. Note: the Tank spinToTarget() and Mechanism spinToTarget() functions have different purposes and take different parameters.
 
 ```cpp
     left->setPID(pidStraight.copy());
@@ -176,14 +176,14 @@ void Tank::spinToTarget(float left_target, float right_target, int l_max_spd, in
 
 ### Turn Movement
 
-The WPID turn function implementation starts by computing the equivalent distance to the specified `target_angle` in motor degrees. The function does this so that the mechanism `spinToTarget(void* args)` function can easily compare the target distance to the readings from the V5 motor internal encoders, which register motor degrees traveled.
+The WPID turn function implementation starts by computing the equivalent distance to the specified `target_angle` in motor degrees. The function does this so that the Mechanism `spinToTarget(void* args)` function can easily compare the target distance to the readings from the V5 motor internal encoders, which register motor degrees traveled.
 
 ```cpp
 float target = ((track_width/2)*((float)(target_angle)*M_PI/180)/wheel_circumference)*360;
 ```
 > Distance computation in turn function
 
-Next, the turn function assigns the correct PID object, `pidTurn`, to each motor_group, since PID objects assigned to each mechanism change between motions (pidStraight vs. pidTurn). The function repeats this step with offset. Finally, the turn function passes the target distances and max speeds for each side to the Tank `spinToTarget(float left_target, float right_target, int l_max_spd, int r_max_spd)` function. Since this function makes the chassis turn, the target distances are the same value with opposite signs (+/-).
+Next, the turn function assigns the correct PID object, `pidTurn`, to each motor_group, since PID objects assigned to each Mechanism change between motions (pidStraight vs. pidTurn). The function repeats this step with offset. Finally, the turn function passes the target distances and max speeds for each side to the Tank `spinToTarget(float left_target, float right_target, int l_max_spd, int r_max_spd)` function. Since this function makes the chassis turn, the target distances are the same value with opposite signs (+/-).
 
 ```cpp
     left->setPID(pidTurn.copy());
