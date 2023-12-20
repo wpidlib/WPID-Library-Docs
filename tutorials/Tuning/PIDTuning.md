@@ -55,7 +55,7 @@ straight.setErrorRange(20);
 ```
 > Error range too large for straight motion
 
-[INSERT GIF]
+[GIF coming soon!]
 
 Next we suggest that you tune the low speed threshold. Low speed threshold works directly with error range as a stopping criteria. From our experience tuning, an effective low speed threshold generally falls in the range of {1-5}. If your robot slows down too much towards the end of the PID motion, increase the low speed threshold. If the robot is stopping abruptly at the end of the PID motion, decrease the low speed threshold. Your low speed threshold is much too high if you are seeing one motor_group on the robot stop before the other (specifically seen in chassis). Below is an example of the PID straight object with a low speed threshold that is *too high* for our tuning route `chassis.straight(24, 50)`.
 
@@ -73,7 +73,7 @@ straight.setMaxIntegral(1);
 ```
 > Max integral too low for straight motion
 
-[INSERT GIF]
+[GIF coming soon!]
 
 The last step in tuning the additional features is to decide whether to use a timeout. Timeout is an external failsafe that overrides all other PID factors (constants and other tuning features) to stop the robot after a certain amount of time. Timeout is disabled until it is manually set, and should only be set at the very end of the tuning process. Because timeout has the ability to disrupt the PID process, setting a timeout that is too short risks nullifying your PID object's ability to properly respond to external factors. For example, if your robot's timeout is set to be 7 seconds (7000 ms) and another robot hits your robot slightly past its intended target at the 6.5 second mark, your robot will only have 0.5 seconds to correct its position. Make sure that you are not undermining PID's closed-loop control style when you set PID timeout. Below is an example of the PID straight object with a timeout value that is *too low* for our tuning route `chassis.straight(24, 50)`.
 
