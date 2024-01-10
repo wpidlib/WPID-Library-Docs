@@ -48,10 +48,10 @@ Now that you have tuned the base PID constants, you can add in the tuning featur
 - `Max Integral` is set to a default of 100
 - `Timeout` is disabled by default (set to -1)
 
-We recommend that you first consider what error range to use with your PID object. If the task you need PID for requires a high degree of accuracy, lower the error range below 2 degrees. Keep in mind, the more you lower the error range, the longer your robot will take to complete the motion (higher settling time). If the task you need PID for is time-sensitive, increase the error range above 2 degrees. However, an error range that is set too large will sacrifice accuracy for speed. Below is an example of the PID straight object with an error range that is *too large* for our tuning route `chassis.straight(24, 50)`.
+We recommend that you first consider what error range to use with your PID object. If the task you need PID for requires a high degree of accuracy, lower the error range below 2 degrees. Keep in mind, the more you lower the error range, the longer your robot will take to complete the motion (higher settling time). If the task you need PID for is time-sensitive, increase the error range above 2 degrees. However, an error range that is set too large will sacrifice accuracy for speed. Below is an example of the PID straight object with an error range that is *too small* for our tuning route `chassis.straight(24, 50)`.
 
 ```cpp
-straight.setErrorRange(20);
+straight.setErrorRange(0.5);
 ```
 > Error range too large for straight motion
 
